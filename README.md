@@ -7,15 +7,18 @@
 The allocation of highly talented workers and limited employment opportunities is never-ending.  In an attempt to simplify the process, this application is designed to pair recruiters and seekers given the minimal amount of information.
 
 ## Functionality & MVP
-  - [ ] Allow recruiters and seekers to login as separate users with different information to fill out.
-  - [ ] Allow recruiters/seekers to match each other given each others' data.
-  - [ ] Allow recruiters/seekers to speak to each other when a match has been found.
+  - [ ] User authentication using Node/Express as the backend framework.
+  - [ ] Ability for job seekers to upload resumes and store into AWS.
+  - [ ] Basic CRUD functionality on both job seeker and recruiter side.
+  - [ ] Parse submitted resumes to match job posting requirements
+  - [ ] Allow recruiters/seekers to accept or reject resumes based on match criteria
+
 
 #### Bonus Features
-  - [ ] Backend will be able to parse resumes and job listings into digestible pieces for users.
+  - [ ] Websocket chat feature.
 
 ## Technologies & Technical Challenges
-##### Backend: Nodejs
+##### Backend: Express/Node.js
 ##### Frontend: React/JavaScript
 
 ## Group Members & Work Breakdown
@@ -23,3 +26,4 @@ The allocation of highly talented workers and limited employment opportunities i
 **Ling Kit Edward Cheng**,
 **Kelvin Cho**,
 **Tan Loc Phan**
+## TEK
