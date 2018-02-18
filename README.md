@@ -22,4 +22,4 @@ The allocation of highly talented workers and limited employment opportunities i
 
 **Ling Kit Edward Cheng**,
 **Kelvin Cho**,
-**Tan Loc Phan**,
+**Tan Loc Phan**
