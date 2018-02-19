@@ -2,9 +2,10 @@ import React from "react";
 import { BrowserRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
+import Landing from './landing';
 
 import Header from "./Header";
-import Landing from './Landing';
+// import Landing from './Landing';
 const Dashboard = () => <h2>Dashboard</h2>;
 const JobsNew = () => <h2>JobsNew</h2>;
 
