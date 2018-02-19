@@ -5,7 +5,7 @@ class Header extends React.Component {
     return (
       <div>
         Header
-        <a>Login with Google</a> 
+        <a>Login with Google</a>
       </div>
     );
   }
