@@ -8,8 +8,10 @@ class Landing extends React.Component {
   render() {
     return (
       <div className="main-landing-div">
-        
+        <div className="landing-div">My New Landing Page Is Better</div>
       </div>
     );
   }
 }
+
+export default Landing;
