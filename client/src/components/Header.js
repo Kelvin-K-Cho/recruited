@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from "react-redux";
+import { Link } from 'react-router-dom';
 
 
 class Header extends React.Component {
@@ -26,7 +27,11 @@ class Header extends React.Component {
   render() {
     return (
       <div>
-        Header
+        <Link
+          to={this.props.auth ? '/jobs' : '/'}
+          >
+          recruited
+        </Link>
         {this.renderContent()}
       </div>
     );
