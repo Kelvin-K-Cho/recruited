@@ -2,11 +2,12 @@ import React from "react";
 import { BrowserRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
+import Landing from './landing';
 
 import Header from "./Header";
 const Dashboard = () => <h2>Dashboard</h2>;
 const ListingNew = () => <h2>ListingNew</h2>;
-const Landing = () => <h2>Landing</h2>;
+// const Landing = () => <h2>Landing</h2>;
 
 
 
