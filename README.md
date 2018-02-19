@@ -4,14 +4,15 @@
 
 ## Background and Overview
 
-The allocation of highly talented workers and limited employment opportunities is never-ending.  In an attempt to simplify the process, this application is designed to pair recruiters and seekers given the minimal amount of information.
+The allocation of highly talented workers and limited employment opportunities is never-ending.  In an attempt to simplify the process, this application is designed to pair recruiters and job seekers given the minimal amount of information.
 
 ## Functionality & MVP
-  - [ ] User authentication using Node/Express as the backend framework.
-  - [ ] Ability for job seekers to upload resumes and store into AWS.
+  - [ ] User authentication using Node/Express as the backend framework. (1 Day)
+  - [ ] Ability for job seekers to upload resumes and store into AWS. (1 Day)
   - [ ] Basic CRUD functionality on both job seeker and recruiter side.
-  - [ ] Parse submitted resumes to match job posting requirements
-  - [ ] Allow recruiters/seekers to accept or reject resumes based on match criteria
+  (1 Day)
+  - [ ] Parse submitted resumes to match job posting requirements. (1 Day)
+  - [ ] Allow recruiters/seekers to accept or reject resumes based on match criteria. (1 Day)
 
 
 #### Bonus Features
@@ -26,4 +27,29 @@ The allocation of highly talented workers and limited employment opportunities i
 **Ling Kit Edward Cheng**,
 **Kelvin Cho**,
 **Tan Loc Phan**
-## TEK
+
+### Daily Breakdown
+
+#### Weekend
+  - Hosted On Heroku
+  - Complete Proposal
+
+#### Day 1
+  - User authentication and verify that all team members have work environment setup.
+  - Begin CRUD functionality on backend.
+  - Start frontend React/Redux for user auth, login/signup
+
+#### Day 2
+  - Create backend parsing algorithm
+  - Start frontend containers and items for Jobs Index
+
+#### Day 3
+  - Ensure functionality on backend
+  - Jobs Show page on frontend and Recruiters Show page
+
+#### Day 4
+  - Implement search/filter algorithm
+  - Styling on frontend
+
+#### Day 5
+  - Finalize production level product / DRY code
