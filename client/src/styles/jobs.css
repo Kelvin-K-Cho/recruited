@@ -1,0 +1,45 @@
+.button-logged-in-google-real {
+  color: #e907ce;
+  text-decoration: none;
+  position: absolute;
+  right: 50px;
+  top: 40px;
+  padding: 5px 10px 5px 10px;
+  background: #fff4f4;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.button-logged-in-google-real:visited {
+  text-decoration: none;
+}
+
+.button-logged-in-google-real:hover {
+  background: lightgray;
+}
+
+.logged-in-logo {
+  padding: 50px 0px 0px 70px;
+  font-size: 50px;
+  position: absolute;
+}
+
+.logged-in-landing-header {
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 62px;
+  font-size: 48px;
+  color: #0f1662;
+}
+
+.logged-in-inner-navigation-div {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  background: #59e1e1;
+}
+
+.logged-in-main-div {
+  height: 100%;
+  background: #59e1e1;
+}

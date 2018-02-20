@@ -1,16 +1,15 @@
 import React from 'react';
 import { connect } from "react-redux";
-import { Link } from 'react-router-dom';
 
 class Landing extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   renderContent(){
     switch (this.props.auth) {
       case null:
-        return;
+        return (
+          <div>
+          </div>
+        );
       case false:
         return (
           <div className="inner-navigation-div">
@@ -19,9 +18,9 @@ class Landing extends React.Component {
         );
       default:
         return (
-        <li>
-          <a href="/api/logout">Logout</a>
-        </li>
+        <div className="inner-nagivation-div">
+          <a className="button-login-google-real" href="/api/logout">Logout</a>
+        </div>
       );
     }
   }
@@ -51,5 +50,6 @@ class Landing extends React.Component {
 function mapStateToProps({ auth }) {
   return { auth };
 }
+
 
 export default connect(mapStateToProps)(Landing);

@@ -2,9 +2,11 @@ import React from "react";
 import { BrowserRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
+import { ProtectedRoute, AuthRoute } from '../util/route_util.jsx';
 import Landing from './landing/landing.jsx';
 import '../styles/reset.css';
 import '../styles/main.css';
+
 
 import Header from "./header.jsx";
 // import Landing from './Landing';
@@ -25,8 +27,8 @@ class App extends React.Component {
           <BrowserRouter>
             <div className="inner-container-div">
               <Header />
-              <Route exact path="/" component={Landing}/>
-              <Route exact path="/jobs" component={Dashboard}/>
+              <AuthRoute path="/" component={Landing}/>
+              <ProtectedRoute path="/jobs" component={Dashboard}/>
               <Route path="/jobs/new" component={JobNew}/>
             </div>
           </BrowserRouter>

@@ -11,8 +11,7 @@ const jobSchema = new Schema({
   location: String,
   salaryEstimate: Number,
   _user: { type: Schema.Types.ObjectId, ref: 'User' },
-  dateCreated: Date,
-  dateUpdated: Date
+  dateCreated: Date
 });
 
 mongoose.model('jobs', jobSchema);
