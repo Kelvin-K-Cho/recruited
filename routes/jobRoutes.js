@@ -5,7 +5,7 @@ const Job = mongoose.model('jobs');
 module.exports = app => {
 
   app.get('/api/jobs', requireLogin, (req, res) => {
-    Job.find({ _user: req.user.id })
+    Job.find({ _id: req.user.id })
       .then((jobs) => (
         res.send(jobs)
       ));
@@ -40,7 +40,7 @@ module.exports = app => {
 
     job.save((err) => {
       if (err) { return res.send(err); }
-      res.send(job);
+      res.send(user.job);
     });
 
   });
