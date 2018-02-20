@@ -1,12 +1,7 @@
 import React from 'react';
 import { connect } from "react-redux";
-import { Link, Redirect, Route, withRouter } from 'react-router-dom';
-
 
 class Landing extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   renderContent(){
     switch (this.props.auth) {
@@ -23,9 +18,9 @@ class Landing extends React.Component {
         );
       default:
         return (
-        <li>
-          <a href="/api/logout">Logout</a>
-        </li>
+        <div className="inner-nagivation-div">
+          <a className="button-login-google-real" href="/api/logout">Logout</a>
+        </div>
       );
     }
   }
