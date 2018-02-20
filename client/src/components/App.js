@@ -26,8 +26,8 @@ class App extends React.Component {
           <BrowserRouter>
             <div className="inner-container-div">
               <Header />
-              <AuthRoute path="/" component={Landing}/>
-              <ProtectedRoute path="/jobs" component={Dashboard}/>
+              <Route exact path="/" component={Landing}/>
+              <Route exact path="/jobs" component={Dashboard}/>
               <Route path="/jobs/new" component={JobNew}/>
             </div>
           </BrowserRouter>
