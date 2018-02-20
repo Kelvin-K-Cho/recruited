@@ -1,10 +1,8 @@
 import {connect} from 'react-redux';
-import {fetchJob} from '../../actions';
-import JobShow from './job_show';
+import {fetchJob} from '../../../actions/job_actions';
 
 const mapSTP = (state) => {
   return {
-    job: state.entities.jobs[this.],
     company: Object.values(state.entitites.companies)
   };
 };
@@ -15,4 +13,4 @@ const mapDTP = (dispatch) => {
   };
 };
 
-export default connect(mapSTP, mapDTP)(JobShow);
+// export default connect(mapSTP, mapDTP)(JobShow);
