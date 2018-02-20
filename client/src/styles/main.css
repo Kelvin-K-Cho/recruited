@@ -1,0 +1,29 @@
+.outer-container-div {
+  background: #7a97ff;
+  height: 100%;
+}
+
+.inner-container-div {
+
+}
+
+.button-login-google {
+  display: inline-block;
+  background: #4E9CAF;
+  padding: 5px 10px 5px 10px;
+  text-align: center;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.inner-navigation-div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  padding: 15px 0px 0px 30px;
+  font-size: 30px;
+}
