@@ -4,6 +4,7 @@ import authReducer from './authReducer';
 import jobsReducer from './jobsReducer';
 
 export default combineReducers({
+  // entities: entitiesReducer,
   auth: authReducer,
   form: reduxForm,
   jobs: jobsReducer

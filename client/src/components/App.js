@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
-import Landing from './landing.jsx';
+import Landing from './landing/landing.jsx';
 import '../styles/reset.css';
 import '../styles/main.css';
 
