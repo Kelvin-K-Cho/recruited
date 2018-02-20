@@ -7,6 +7,7 @@ import { FETCH_USER, FETCH_JOBS } from "./types";
 //     payload: shouldBeLoggedIn
 //   };
 // };
+//
 
 export const fetchUser = () => dispatch => (
   axios.get('/api/current_user')
