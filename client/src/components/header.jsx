@@ -14,7 +14,7 @@ class Header extends React.Component {
           <div className="inner-navigation-div">
             <h1 className="logo">Logo</h1>
             <h1 className="landing-header">≋R≋E≋C≋R≋U≋I≋T≋E≋D≋</h1>
-            <a className="button-login-google" href="/auth/google">Login With Google</a>
+            <a className="button-login-google-fake" href="/auth/google">Login With Google</a>
           </div>
         );
       default:
