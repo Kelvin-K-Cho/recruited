@@ -1,10 +1,11 @@
 import { combineReducers } from 'redux';
 import { reducer as reduxForm } from 'redux-form';
 import authReducer from './authReducer';
-import entitiesReducer from './entities_reducer';
+import jobsReducer from './jobsReducer';
 
 export default combineReducers({
-  entities: entitiesReducer,
+  // entities: entitiesReducer,
   auth: authReducer,
-  form: reduxForm
+  form: reduxForm,
+  jobs: jobsReducer
 });
