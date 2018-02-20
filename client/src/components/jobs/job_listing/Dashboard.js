@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 // import JobIndexContainer from './job_index_container';
 import '../../../styles/jobs.css';
+import JobsIndexContainer from './jobs_index_container';
 import JobList from '../JobList';
 
 const Dashboard = () => {

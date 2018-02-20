@@ -11,6 +11,7 @@ import logger from 'redux-logger';
 const store = createStore(reducers, {}, applyMiddleware(reduxThunk, logger));
 
 window.axios = axios;
+window.getState = store.getState;
 
 ReactDOM.render(
   <Provider store={store}><App /></Provider>,
