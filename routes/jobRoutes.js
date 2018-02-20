@@ -5,8 +5,12 @@ const Job = mongoose.model('jobs');
 module.exports = app => {
 
   app.get('/api/jobs', requireLogin, (req, res) => {
-    Job.find({ _id: req.user.id })
-      .then((jobs) => (
+    // Job.find({ _id: req.user.id })
+    //   .then((jobs) => (
+    //     res.send(jobs)
+    //   ));
+    Job.find({})
+      .then(jobs => (
         res.send(jobs)
       ));
   });
