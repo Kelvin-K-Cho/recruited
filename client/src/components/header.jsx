@@ -1,7 +1,5 @@
 import React from 'react';
 import { connect } from "react-redux";
-import { Link } from 'react-router-dom';
-
 
 class Header extends React.Component {
 
@@ -19,9 +17,13 @@ class Header extends React.Component {
         );
       default:
         return (
-        <li>
-          <a href="/api/logout">Logout</a>
-        </li>
+        <div className="logged-in-inner-navigation-div">
+          <h1 className="logged-in-logo">𝓡</h1>
+          <h1 className="logged-in-landing-header">≋R≋E≋C≋R≋U≋I≋T≋E≋D≋</h1>
+          <span className="span-logged-in">
+            <a className="button-logged-in-google-real" href="/api/logout">Logout</a>
+          </span>
+        </div>
       );
     }
   }

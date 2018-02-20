@@ -1,7 +1,6 @@
 /* CONTAINER */
 
 .outer-container-div {
-  background: #7a97ff;
   height: 100%;
 }
 
@@ -12,10 +11,12 @@
 /* NAVIGATION BAR  */
 
 .outer-navigation-div {
-  height: 100px;
+  height: 120px;
 }
 
 .inner-navigation-div {
+  background: #7a97ff;
+  height: 100%;
   display: flex;
   justify-content: space-between;
 }
@@ -41,6 +42,7 @@
 /* CENTER STYLING */
 
 .main-landing-div {
+  background: #7a97ff;
   height: 100%;
   width: 100%;
   position: fixed;
@@ -91,4 +93,12 @@
   color: #e907ce;
   font-weight: bold;
   text-decoration: none;
+}
+
+.button-login-google-real:visited {
+  text-decoration: none;
+}
+
+.button-login-google-real:hover {
+  background: lightgray;
 }
