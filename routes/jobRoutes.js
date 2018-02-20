@@ -23,6 +23,7 @@ module.exports = app => {
       salaryEstimate
     } = req.body;
 
+    const user = req.user.save();
 
     const job = new Job({
       title,
@@ -36,5 +37,13 @@ module.exports = app => {
       _user: req.user.id,
       dateCreated: Date.now()
     });
+
+    job.save((err) => {
+      if (err) { return res.send(err); }
+      res.send(job);
+    });
+
   });
+
+
 };
