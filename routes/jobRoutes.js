@@ -3,6 +3,14 @@ const requireLogin = require("../middlewares/requireLogin");
 const Job = mongoose.model('jobs');
 
 module.exports = app => {
+
+  app.get('/api/jobs', requireLogin, (req, res) => {
+    Job.find({ _user: req.user.id })
+      .then((jobs) => (
+        res.send(jobs)
+      ));
+  });
+
   app.post('/api/jobs', requireLogin, (req, res) => {
     const {
       title,
