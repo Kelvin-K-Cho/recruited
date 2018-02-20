@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from "react-redux";
-import { Link } from 'react-router-dom';
+import { Link, Redirect, Route, withRouter } from 'react-router-dom';
+
 
 class Landing extends React.Component {
   constructor(props) {
@@ -10,7 +11,10 @@ class Landing extends React.Component {
   renderContent(){
     switch (this.props.auth) {
       case null:
-        return;
+        return (
+          <div>
+          </div>
+        );
       case false:
         return (
           <div className="inner-navigation-div">
@@ -51,5 +55,6 @@ class Landing extends React.Component {
 function mapStateToProps({ auth }) {
   return { auth };
 }
+
 
 export default connect(mapStateToProps)(Landing);
