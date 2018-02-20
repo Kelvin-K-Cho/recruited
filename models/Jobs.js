@@ -6,10 +6,10 @@ const jobSchema = new Schema({
   summary: String,
   responsibilities: String,
   qualifications: String,
-  type: [String],
-  experience: [String],
+  type: String,
+  experience: String,
   location: String,
-  salary_estimate: Number,
+  salaryEstimate: Number,
   _user: { type: Schema.Types.ObjectId, ref: 'User' },
   dateCreated: Date,
   dateUpdated: Date

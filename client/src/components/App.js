@@ -2,15 +2,14 @@ import React from "react";
 import { BrowserRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
-import Landing from './landing';
+import Landing from './landing.jsx';
 import '../styles/reset.css';
 import '../styles/main.css';
 
 import Header from "./header.jsx";
 // import Landing from './Landing';
-const Dashboard = () => <h2>Dashboard</h2>;
-const JobsNew = () => <h2>JobsNew</h2>;
-
+import Dashboard from "./Dashboard";
+import JobNew from './jobs/JobNew';
 
 class App extends React.Component {
 
@@ -26,7 +25,7 @@ class App extends React.Component {
               <Header />
               <Route exact path="/" component={Landing}/>
               <Route exact path="/jobs" component={Dashboard}/>
-              <Route path="/jobs/new" component={JobsNew}/>
+              <Route path="/jobs/new" component={JobNew}/>
             </div>
           </BrowserRouter>
         </div>
