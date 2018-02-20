@@ -10,8 +10,9 @@ import '../styles/main.css';
 
 import Header from "./header.jsx";
 // import Landing from './Landing';
-import Dashboard from "./Dashboard";
+import Dashboard from "./jobs/job_listing/Dashboard";
 import JobNew from './jobs/JobNew';
+// import JobShowContainer from './jobs/job_showpage/job_show_container';
 
 class App extends React.Component {
 

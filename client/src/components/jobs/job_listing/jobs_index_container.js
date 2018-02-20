@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import {fetchJobs} from '../../actions';
+import {fetchJobs} from '../../../actions/job_actions';
 import JobIndex from './job_index';
 
 const mapSTP = (state) => {
