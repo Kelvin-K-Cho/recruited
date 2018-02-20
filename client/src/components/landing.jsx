@@ -1,16 +1,33 @@
 import React from 'react';
+import { connect } from "react-redux";
+import { Link } from 'react-router-dom';
 
 class Landing extends React.Component {
   constructor(props) {
     super(props);
   }
 
+  renderContent(){
+    switch (this.props.auth) {
+      case null:
+        return;
+      case false:
+        return (
+          <div className="inner-navigation-div">
+            <a className="button-login-google" href="/auth/google">Login With Google</a>
+          </div>
+        );
+      default:
+        return (
+        <li>
+          <a href="/api/logout">Logout</a>
+        </li>
+      );
+    }
+  }
   render() {
     return (
       <div className="main-landing-div">
-        <div className="navigation-div">
-          <h1 className="landing-header">≋R≋E≋C≋R≋U≋I≋T≋E≋D≋</h1>
-        </div>
         <div className="session-div-logged-out">
           <p className="first-text">
             Start By Doing What Is Necessary,
@@ -24,11 +41,15 @@ class Landing extends React.Component {
           <p className="fourth-text">
             Join The Work Force Today!
           </p>
-          <button className="button-to-sign-up">Sign Up Now</button>
+          <button className="button-to-sign-up">{this.renderContent()}</button>
         </div>
       </div>
     );
   }
 }
 
-export default Landing;
+function mapStateToProps({ auth }) {
+  return { auth };
+}
+
+export default connect(mapStateToProps)(Landing);
