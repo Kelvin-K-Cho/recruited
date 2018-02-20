@@ -14,7 +14,7 @@ class Landing extends React.Component {
       case false:
         return (
           <div className="inner-navigation-div">
-            <a className="button-login-google" href="/auth/google">Login With Google</a>
+            <a className="button-login-google-real" href="/auth/google">Login With Google</a>
           </div>
         );
       default:

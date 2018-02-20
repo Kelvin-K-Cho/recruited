@@ -1,21 +1,18 @@
+/* CONTAINER */
+
 .outer-container-div {
   background: #7a97ff;
   height: 100%;
 }
 
 .inner-container-div {
-
+  height: 100%;
 }
 
-.button-login-google {
-  display: inline-block;
-  background: #4E9CAF;
-  padding: 5px 10px 5px 10px;
-  text-align: center;
-  border-radius: 10px;
-  color: white;
-  font-weight: bold;
-  text-decoration: none;
+/* NAVIGATION BAR  */
+
+.outer-navigation-div {
+  height: 100px;
 }
 
 .inner-navigation-div {
@@ -24,6 +21,74 @@
 }
 
 .logo {
-  padding: 15px 0px 0px 30px;
+  padding: 50px 0px 0px 70px;
   font-size: 30px;
+  position: absolute;
+}
+
+.landing-header {
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 50px;
+  font-size: 48px;
+  color: #f3f4f8;
+}
+
+.button-login-google-fake {
+  display: none;
+}
+
+/* CENTER STYLING */
+
+.main-landing-div {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+}
+
+.session-div-logged-out {
+  text-align: center;
+}
+
+.first-text {
+  padding-top: 16%;
+  font-size: 34px;
+  font-style: italic;
+  color: white;
+  letter-spacing: 6px;
+}
+
+.second-text {
+  font-size: 34px;
+  font-style: italic;
+  margin-top: 15px;
+  color: white;
+  letter-spacing: 6px;
+}
+
+.third-text {
+  font-size: 34px;
+  font-style: italic;
+  margin-top: 15px;
+  color: #c72323;
+  letter-spacing: 6px;
+}
+
+.fourth-text {
+  margin-top: 50px;
+}
+
+.button-to-sign-up {
+  margin-top: 30px;
+}
+
+.button-login-google-real {
+  display: inline-block;
+  background: #fff4f4;
+  padding: 5px 10px 5px 10px;
+  text-align: center;
+  border-radius: 10px;
+  color: #e907ce;
+  font-weight: bold;
+  text-decoration: none;
 }
