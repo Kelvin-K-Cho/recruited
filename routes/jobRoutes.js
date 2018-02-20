@@ -5,7 +5,7 @@ const Job = mongoose.model('jobs');
 module.exports = app => {
 
   app.get('/api/jobs', requireLogin, (req, res) => {
-    Job.find({ _user: req.user.id })
+    Job.find({ _id: req.user.id })
       .then((jobs) => (
         res.send(jobs)
       ));
@@ -23,6 +23,7 @@ module.exports = app => {
       salaryEstimate
     } = req.body;
 
+    const user = req.user.save();
 
     const job = new Job({
       title,
@@ -36,5 +37,13 @@ module.exports = app => {
       _user: req.user.id,
       dateCreated: Date.now()
     });
+
+    job.save((err) => {
+      if (err) { return res.send(err); }
+      res.send(user.job);
+    });
+
   });
+
+
 };
