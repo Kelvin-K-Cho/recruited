@@ -12,7 +12,7 @@ class Header extends React.Component {
       case false:
         return (
           <div className="inner-navigation-div">
-            <h1 className="logo">Logo</h1>
+            <h1 className="logo">𝓡</h1>
             <h1 className="landing-header">≋R≋E≋C≋R≋U≋I≋T≋E≋D≋</h1>
             <a className="button-login-google-fake" href="/auth/google">Login With Google</a>
           </div>
