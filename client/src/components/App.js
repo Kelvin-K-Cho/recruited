@@ -11,6 +11,8 @@ import Header from "./header.jsx";
 import Dashboard from "./Dashboard";
 import JobNew from './jobs/JobNew';
 
+import JobIndex from './jobs/job_listing/job_index'; //I'm not sure which route should this be in
+
 class App extends React.Component {
 
   componentDidMount() {
