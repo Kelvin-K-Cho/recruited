@@ -18,7 +18,11 @@ html, body {
   height: 100%;
   position: relative;
 }
-
+/*
 body  {
 background: linear-gradient(to right, blue 0%,black 50%,#000000 50%,black 50%,blue 100%);
+} */
+
+body {
+  background: radial-gradient(black, blue);
 }
