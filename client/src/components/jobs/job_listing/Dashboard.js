@@ -8,15 +8,15 @@ const Dashboard = () => {
   return (
     <div className="logged-in-main-div">
       <p className="button-to-create-job">
-        <Link className="link-to-create-job" 
+        <Link className="link-to-create-job"
           to="/jobs/new">
           New Job Form
         </Link>
       </p>
       <div className="logged-in-header">
-      All Jobs - Sorted By :  
+      All Jobs - Sorted By :
       <span className="logged-in-recent">
-      [ Recent ] 
+      [ Recent ]
       </span>
       </div>
         <JobList />
