@@ -7,10 +7,13 @@ import JobList from '../JobList';
 const Dashboard = () => {
   return (
     <div className="logged-in-main-div">
-      <Link to="/jobs/new">
-        New Job Form
-      </Link>
-      <JobList />
+      <span className="button-to-create-job">
+        <Link className="link-to-create-job" 
+          to="/jobs/new">
+          New Job Form
+        </Link>
+      </span>
+        <JobList />
     </div>
   );
 };
