@@ -24,8 +24,8 @@ class JobShow extends React.Component {
           <div>{job.summary}</div>
           <div>Responsibilities: </div>
           <div>{job.responsibilities}</div>
-          <div>Requirements: </div>
-          <div>{job.responsibilities}</div>
+          <div>qualifications: </div>
+          <div>{job.qualifications}</div>
           <p>Post On:{new Date(job.dateCreated).toLocaleDateString()}</p>
         </div>
       </div>
