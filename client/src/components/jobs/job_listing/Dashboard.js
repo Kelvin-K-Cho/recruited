@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import JobIndexContainer from './job_index_container';
 import '../../../styles/jobs.css';
 import JobList from '../JobList';
 

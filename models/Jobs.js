@@ -4,6 +4,8 @@ const { Schema }  = mongoose;
 const jobSchema = new Schema({
   title: String,
   summary: String,
+  company: String,
+  company_url: String,
   responsibilities: String,
   qualifications: String,
   type: String,
