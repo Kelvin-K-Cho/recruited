@@ -43,3 +43,12 @@
   height: 100%;
   background: #59e1e1;
 }
+
+.link-to-create-job {
+  color: #e907ce;
+  text-decoration: none;
+  padding: 5px 10px 5px 10px;
+  background: #fff4f4;
+  border-radius: 10px;
+  font-weight: bold;
+}
