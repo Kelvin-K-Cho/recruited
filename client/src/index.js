@@ -8,9 +8,12 @@ import reducers from './reducers'; //how does it know what file to take?
 import reduxThunk from 'redux-thunk';
 import logger from 'redux-logger';
 
+import {fetchJob} from './actions/index';
+
 const store = createStore(reducers, {}, applyMiddleware(reduxThunk, logger));
 
 window.axios = axios;
+window.fetchJob = fetchJob;
 
 ReactDOM.render(
   <Provider store={store}><App /></Provider>,

@@ -6,6 +6,7 @@ module.exports = app => {
 
   app.get('/api/jobs', requireLogin, (req, res) => {
     Job.find({})
+      .select({responsibilities: 0, qualifications: 0, experience: 0})
       .then((jobsArr) => {
         const jobs = {};
         jobsArr.forEach(job => {
@@ -15,33 +16,40 @@ module.exports = app => {
       });
   });
 
+  app.get('/api/jobs/:id', requireLogin, (req, res) => {
+    Job.find({_id: req.params.id})
+      .then((jobs) => {
+        res.send(jobs[0]);  // it returns as array so we have to get index 0
+      });
+  });
+
   app.post('/api/jobs', requireLogin, (req, res) => {
     const {
       title,
-      summary,
+      type,
       company,
       company_url,
+      location,
+      salaryEstimate,
       responsibilities,
       qualifications,
-      type,
       experience,
-      location,
-      salaryEstimate
+      summary
     } = req.body;
 
     const user = req.user.save();
 
     const job = new Job({
       title,
-      summary,
+      type,
       company,
       company_url,
-      responsibilities,
-      qualifications,
-      type,
-      experience,
       location,
       salaryEstimate,
+      responsibilities,
+      qualifications,
+      experience,
+      summary,
       _user: req.user.id,
       dateCreated: Date.now()
     });
