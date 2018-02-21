@@ -6,15 +6,21 @@ module.exports = app => {
 
   app.get('/api/jobs', requireLogin, (req, res) => {
     Job.find({})
-      .then((jobs) => (
-        res.send(jobs)
-      ));
+      .then((jobsArr) => {
+        const jobs = {};
+        jobsArr.forEach(job => {
+          jobs[job.id] = job;
+        });
+        res.send(jobs);
+      });
   });
 
   app.post('/api/jobs', requireLogin, (req, res) => {
     const {
       title,
       summary,
+      company,
+      company_url,
       responsibilities,
       qualifications,
       type,
@@ -28,6 +34,8 @@ module.exports = app => {
     const job = new Job({
       title,
       summary,
+      company,
+      company_url,
       responsibilities,
       qualifications,
       type,
@@ -40,7 +48,7 @@ module.exports = app => {
 
     job.save((err) => {
       if (err) { return res.send(err); }
-      res.send(user.job);
+      res.send(user.job); // send job informatin for review
     });
 
   });
