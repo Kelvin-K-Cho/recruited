@@ -3,7 +3,7 @@ import React from 'react';
 import { reduxForm, Field } from 'redux-form';
 import { Link } from 'react-router-dom';
 import JobField from './JobField';
-import formFields from './formFields'
+import formFields from './formFields';
 
 class JobForm extends React.Component {
 
