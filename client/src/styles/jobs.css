@@ -112,6 +112,16 @@
   margin-left: auto;
 }
 
+.link-to-job-show-page {
+  text-decoration: none;
+  color: black;
+}
+
+.link-to-job-show-page:visited {
+  text-decoration: none;
+  color: black;
+}
+
 .job-index-item-inner-div:hover {
   background: lightblue;
   cursor: pointer;
@@ -154,7 +164,6 @@
   width: 480px;
   margin-left: auto;
   margin-right: auto;
-
 }
 
 .job-index-item-post-date {

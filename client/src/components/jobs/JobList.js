@@ -13,9 +13,9 @@ class JobList extends React.Component {
   renderJobs(){
     return this.props.jobs.reverse().map(job => {
       return (
-        <Link to={`/jobs/${job._id}`}>
           <div className="job-index-item-outer-div"key={job._id}>
             <div className="job-index-item-inner-div">
+            <Link className="link-to-job-show-page" to={`/jobs/${job._id}`}>
               <div className="job-index-item-name">{job.title} - {job.type}</div>
               <div className="job-index-item-info">
                 <Link to={`${job.company_url}`}>{job.company}</Link>
@@ -29,9 +29,9 @@ class JobList extends React.Component {
               <p className="job-index-item-date">
               {new Date(job.dateCreated).toLocaleDateString()}
               </p>
+              </Link>
             </div>
           </div>
-        </Link>
       );
     });
   }
