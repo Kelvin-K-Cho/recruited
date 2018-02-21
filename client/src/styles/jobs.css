@@ -3,11 +3,17 @@
   text-decoration: none;
   position: absolute;
   right: 50px;
-  top: 80px;
+  top: 50px;
   padding: 5px 10px 5px 10px;
-  background: #fff4f4;
+  /* background: #fff4f4; */
   border-radius: 10px;
   font-weight: bold;
+  position: absolute;
+  background: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  border: 1px solid black;
+  outline: none;
 }
 
 .button-logged-in-google-real:visited {
@@ -83,6 +89,11 @@
   background: #fff4f4;
   border-radius: 10px;
   font-weight: bold;
+  background: white;
+  padding: 6px 20px;
+  border-radius: 4px;
+  border: 1px solid black;
+  outline: none;
 }
 
 .link-to-create-job:hover {
@@ -110,7 +121,7 @@
   margin-bottom: 30px;
   background: #eaf9f9;
   border-radius: 5px;
-  transition: width 0.25s;
+  transition: width 0.15s;
   margin-right: auto;
   margin-left: auto;
 }
@@ -132,6 +143,9 @@
   width: 550px;
   /* padding-top: 30px; */
   /* padding-bottom: 50px; */
+  margin-right: auto;
+  margin-left: auto;
+  /* padding-left: 30px; */
 }
 
 .job-index-item-name {
@@ -159,6 +173,7 @@
   width: 480px;
   margin-left: auto;
   margin-right: auto;
+  /* padding-left:50px; */
 }
 
 .job-index-item-summary {
@@ -190,4 +205,93 @@
   height: 100%;
   position: fixed;
   background: #9df5f5;
+}
+
+/* RESUME */
+
+.modal-screen {
+  background: rgba(0,0,0,0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.resume-form {
+  min-width: 300px;
+  min-height: 300px;
+  background: #F4F3E1;
+  z-index: 3;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 30px;
+}
+
+.resume-button {
+  background: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  border: 1px solid black;
+  outline: none;
+  position: absolute;
+  right: 50px;
+  top: 100px;
+}
+
+.resume-button:hover {
+  background: lightgray;
+  cursor: pointer;
+}
+
+.close-button {
+  width: 25px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+/* NEW JOB FORM */
+
+.job-form-outer-div {
+  height: 100%;
+  background: #9df5f5;
+  text-align: center;
+}
+
+.job-form-container-div {
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid;
+  margin-top: 50px;
+  background: darkgray;
+  border-radius: 10px;
+}
+
+.create-new-job-header {
+  font-size: 30px;
+  font-weight: 700;
+  /* padding-top: 50px; */
+  padding: 40px;
+}
+
+.new-job-criteria-div {
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.new-job-label {
+  position: absolute;
+  left: 15px;
+  font-weight: 700;
+}
+
+.new-job-input {
+  margin-left: 150px;
+  width: 230px;
 }

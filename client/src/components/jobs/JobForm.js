@@ -15,11 +15,11 @@ class JobForm extends React.Component {
 
   render(){
     return (
-      <div>
-        <form onSubmit={this.props.handleSubmit(this.props.onJobSubmit)}>
+      <div className="job-form-main-div">
+        <form className="job-form-main-inner-div" onSubmit={this.props.handleSubmit(this.props.onJobSubmit)}>
           {this.renderFields()}
-          <Link to="/jobs">Cancel</Link>
-          <button type="submit">Next</button>
+          <Link className="link-to-cancel-new-job" to="/jobs">Cancel</Link>
+          <button className="button-to-create-new-job" type="submit">Next</button>
         </form>
       </div>
     );
@@ -28,7 +28,7 @@ class JobForm extends React.Component {
 
 function validate(values) {
   const errors = {};
-
+  // debugger;
   _.each(formFields, ({ name }) => {
     if (!values[name]) {
       errors[name] = 'You must provide a value';

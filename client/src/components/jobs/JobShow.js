@@ -34,7 +34,7 @@ class JobShow extends React.Component {
 
   render() {
     console.log(this.props);
-    if (!this.props.job) return (<div>Loading...</div>);
+    if (!this.props.job) return (<div></div>);
     return (
       <div className="job-show-page-outer-div">
         {this.renderJob()}

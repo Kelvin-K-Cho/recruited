@@ -24,12 +24,12 @@ class Header extends React.Component {
         <div className="logged-in-inner-navigation-div">
           <h1 className="logged-in-logo">𝓡</h1>
           <h1 className="logged-in-landing-header">Recruited</h1>
-          <button className="resume-button" onClick={()=> this.setState({openResume: true})}>
-              Upload Resume
-          </button>
           <div>{this.renderResumeModal()}</div>
           <span className="span-logged-in">
             <a className="button-logged-in-google-real" href="/api/logout">Logout</a>
+            <button className="resume-button" onClick={()=> this.setState({openResume: true})}>
+              Upload Resume
+            </button>
           </span>
         </div>
       );
