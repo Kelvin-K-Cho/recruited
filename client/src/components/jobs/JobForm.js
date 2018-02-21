@@ -16,10 +16,10 @@ class JobForm extends React.Component {
   render(){
     return (
       <div>
-      <form onSubmit={this.props.handleSubmit(this.props.onJobSubmit)}>
-        {this.renderFields()}
-        <Link to="/jobs">Cancel</Link>
-        <button type="submit">Next</button>
+        <form onSubmit={this.props.handleSubmit(this.props.onJobSubmit)}>
+          {this.renderFields()}
+          <Link to="/jobs">Cancel</Link>
+          <button type="submit">Next</button>
         </form>
       </div>
     );

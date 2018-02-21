@@ -24,7 +24,9 @@ class Landing extends React.Component {
       );
     }
   }
+
   render() {
+    console.log(this.state);
     return (
       <div className="main-landing-div">
         <div className="session-div-logged-out">

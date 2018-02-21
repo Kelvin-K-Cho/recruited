@@ -1,9 +1,9 @@
 .button-logged-in-google-real {
-  color: #e907ce;
+  color: #ff0000;
   text-decoration: none;
   position: absolute;
   right: 50px;
-  top: 40px;
+  top: 80px;
   padding: 5px 10px 5px 10px;
   background: #fff4f4;
   border-radius: 10px;
@@ -19,27 +19,175 @@
 }
 
 .logged-in-logo {
-  padding: 50px 0px 0px 70px;
+  /* padding: 50px 0px 0px 70px; */
+  /* font-size: 50px; */
+  /* position: absolute; */
   font-size: 50px;
   position: absolute;
+  width: 90px;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 5px;
+  left: 50px;
+  top: 55px;
+  background: lightgray;
 }
 
 .logged-in-landing-header {
   margin-right: auto;
   margin-left: auto;
   padding-top: 62px;
-  font-size: 48px;
+  /* font-size: 48px; */
   color: #0f1662;
+  font-family: "Avenir Next", Avenir, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: 6px;
+  font-size: 76px;
 }
 
 .logged-in-inner-navigation-div {
   height: 100%;
   display: flex;
   justify-content: space-between;
-  background: #59e1e1;
+  background: #9df5f5;
 }
 
 .logged-in-main-div {
   height: 100%;
-  background: #59e1e1;
+  background: #9df5f5;
+}
+
+.logged-in-header {
+  text-align: center;
+  color: #0e2aff;
+  padding-top: 20px;
+  font-size: 24px;
+}
+
+.logged-in-recent {
+  margin-left: 10px;
+  color: darkblue;
+}
+
+.button-to-create-job {
+  margin-left: auto;
+  text-align: left;
+  width: 500px;
+  margin-right: auto;
+  padding-top: 150px;
+}
+
+.link-to-create-job {
+  color: #ff0000;
+  text-decoration: none;
+  padding: 5px 10px 5px 10px;
+  background: #fff4f4;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.link-to-create-job:hover {
+  background: lightgray;
+}
+
+/* JOBS INDEX  */
+
+.job-index-item-container-div {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.job-index-item-outer-div {
+  /* width: 500px; */
+  /* margin-right: auto;
+  margin-left: auto; */
+  /* padding: 20px; */
+}
+
+.job-index-item-inner-div {
+  width: 500px;
+  padding: 15px;
+  border: 1px solid black;
+  margin-bottom: 30px;
+  background: #eaf9f9;
+  border-radius: 5px;
+  transition: width 0.25s;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.link-to-job-show-page {
+  text-decoration: none;
+  color: black;
+}
+
+.link-to-job-show-page:visited {
+  text-decoration: none;
+  color: black;
+}
+
+.job-index-item-inner-div:hover {
+  background: lightblue;
+  cursor: pointer;
+  /* padding: 50px; */
+  width: 550px;
+  /* padding-top: 30px; */
+  /* padding-bottom: 50px; */
+}
+
+.job-index-item-name {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.job-index-item-info {
+  margin-top: 10px;
+  margin-bottom: 4px;
+}
+
+.job-index-item-estimate {
+  /* margin-top: 4px; */
+}
+
+.job-index-item-salary {
+  /* margin: 4px; */
+}
+
+.job-index-item-description {
+  text-align: left;
+  font-size: 18px;
+  font-weight: 700;
+  width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.job-index-item-summary {
+  text-align: left;
+  margin-top: 5px;
+  width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.job-index-item-post-date {
+  width: 480px;
+  text-align: left;
+  margin-top: 10px;
+  font-weight: 700;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.job-index-item-date {
+  width: 480px;
+  text-align: left;
+  margin-top: 3px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.job-show-page-outer-div {
+  height: 100%;
+  position: fixed;
+  background: #9df5f5;
 }

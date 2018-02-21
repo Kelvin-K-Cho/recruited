@@ -1,5 +1,8 @@
 import axios from "axios";
-import { FETCH_USER, FETCH_JOBS } from "./types";
+import { FETCH_USER,
+  FETCH_JOBS,
+  FETCH_JOB
+} from "./types";
 
 // export const changeLogin = shouldBeLoggedIn => {
 //   return {
@@ -24,9 +27,17 @@ export const submitJob = (values, history) => dispatch => (
 );
 
 export const fetchJobs = () => dispatch => (
-  axios.get('api/jobs')
+  axios.get('/api/jobs')
     .then(res => dispatch({
       type: FETCH_JOBS,
       payload: res.data
+    }))
+);
+
+export const fetchJob = (id) => dispatch => (
+  axios.get(`/api/jobs/${id}`)
+    .then(res => dispatch({
+      type: FETCH_JOB,
+      payload: res.data // because it returns as an array
     }))
 );
