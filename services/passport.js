@@ -1,3 +1,10 @@
+/*eslint max-len: ["error", { "ignoreComments": true }]*/
+/*
+Passport is authentication middleware made for Node.js.  It comes pre-packaged with
+all necessary authentication methods.  OAuth (the protocol of delegating actual authentication
+to a third party ) is provided by Google using GoogleStrategy (version 2.0).
+*/
+
 const passport = require("passport");
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const mongoose = require("mongoose");
