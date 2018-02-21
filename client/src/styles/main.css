@@ -11,7 +11,7 @@
 /* NAVIGATION BAR  */
 
 .outer-navigation-div {
-  height: 120px;
+  height: 140px;
 }
 
 .inner-navigation-div {
@@ -22,9 +22,19 @@
 }
 
 .logo {
-  padding: 50px 0px 0px 70px;
+  /* padding: 50px 0px 0px 70px;
+  font-size: 50px;
+  position: absolute; */
+
   font-size: 50px;
   position: absolute;
+  width: 90px;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 5px;
+  left: 50px;
+  top: 55px;
+  background: lightgray;
 }
 
 .landing-header {
