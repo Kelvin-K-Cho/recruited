@@ -12,17 +12,20 @@ html, body, div, span, h1, h2, h3, p, img, strong, center, ol, ul, li, nav, butt
 
 html, body {
   height: 100%;
+  overflow: scroll;
+  background: #9df5f5;
 }
 
 #root {
   height: 100%;
   position: relative;
+  background: #9df5f5;
 }
 /*
 body  {
 background: linear-gradient(to right, blue 0%,black 50%,#000000 50%,black 50%,blue 100%);
 } */
 
-body {
-  background: radial-gradient(black, blue);
-}
+/* body {
+  background: radial-gradient(#00073e, #7b7bff);
+} */
