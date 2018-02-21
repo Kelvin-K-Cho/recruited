@@ -6,6 +6,8 @@ class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {openResume: false};
+    this.resumeText;
+    this.resumeHTML;
   }
 
   renderContent(){
@@ -54,19 +56,22 @@ class Header extends React.Component {
             src="https://www.materialui.co/materialIcons/navigation/close_grey_192x192.png">
           </img>
           <div>Upload your resume (.doc, .docx)</div>
-            <input id="resume-input" type="file"/>
-          <input onClick={() => this.handleFile()}
-            type="text" value="Submit" />
-          <div id="file-review">File Review:</div>
+            <input onChange={() => this.handleFile()} id="resume-input" type="file"/>
+          <input onClick={() => this.submitFile()}
+            type="submit" value="Submit" />
+          <div id="file-review">File Review</div>
         </form>
       </div>
     );
   }
 
+  submitFile() {
+    
+  }
+
   handleFile() {
     const resume = document.getElementById('resume-input').files[0];
     const review = document.getElementById('file-review');
-    let resumeText; // later to save raw text of resume file
 
     if (resume) {
       let reader = new FileReader();
@@ -76,7 +81,7 @@ class Header extends React.Component {
         // Using mammoth to convert arrayBuffer into Raw Text
         mammoth.extractRawText({
           arrayBuffer: arrayBuffer
-        }).then((result) => {resumeText = result.value;});
+        }).then((result) => {this.resumeText = result.value;});
         // Using mammoth to convert arrayBuffer into inner HTML
         mammoth.convertToHtml({
           arrayBuffer: arrayBuffer
