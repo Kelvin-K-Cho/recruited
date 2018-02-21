@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchJobs } from '../../actions';
 
+import {Link} from 'react-router-dom';
+
 class JobList extends React.Component {
 
   componentDidMount() {
@@ -13,8 +15,13 @@ class JobList extends React.Component {
       return (
         <div key={job._id}>
           <div>
-            <span>{job.title}</span>
-            <p>{job.summary}</p>
+            <div>{job.title} - {job.type}</div>
+            <div>
+              <Link to={`${job.company_url}`}>{job.company}</Link>
+              &#160;- {job.location}
+            </div>
+            <div>$ {job.salaryEstimate}</div>
+            <div>{job.summary}</div>
             <p>Post On:{new Date(job.dateCreated).toLocaleDateString()}</p>
           </div>
         </div>
@@ -32,7 +39,7 @@ class JobList extends React.Component {
 }
 
 function mapStateToProps(state) {
-  return { jobs: state.jobs };
+  return { jobs: Object.values(state.entities.jobs) };
 }
 
 export default connect(mapStateToProps, { fetchJobs })(JobList);

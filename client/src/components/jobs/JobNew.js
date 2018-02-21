@@ -23,6 +23,7 @@ class JobNew extends React.Component {
   }
 
   render() {
+    console.log('rendering form');
     return (
       <div>
         {this.renderContent()}
