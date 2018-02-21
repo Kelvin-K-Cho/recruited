@@ -15,7 +15,7 @@
 }
 
 .inner-navigation-div {
-  background: #7a97ff;
+  /* background: #7a97ff; */
   height: 100%;
   display: flex;
   justify-content: space-between;
@@ -41,8 +41,11 @@
   margin-right: auto;
   margin-left: auto;
   padding-top: 62px;
-  font-size: 48px;
-  color: #0f1662;
+  /* font-size: 48px; */
+  color: #eff0ff;
+  font-family: "Avenir Next", Avenir, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: 6px;
+  font-size: 80px;
 }
 
 .button-login-google-fake {
@@ -52,7 +55,7 @@
 /* CENTER STYLING */
 
 .main-landing-div {
-  background: #7a97ff;
+  /* background: #7a97ff; */
   height: 100%;
   width: 100%;
   position: fixed;
@@ -88,6 +91,7 @@
 
 .fourth-text {
   margin-top: 50px;
+  color: #f7cbcb;
 }
 
 .button-to-sign-up {
@@ -100,7 +104,7 @@
   padding: 5px 10px 5px 10px;
   text-align: center;
   border-radius: 10px;
-  color: #e907ce;
+  color: #ff0000;
   font-weight: bold;
   text-decoration: none;
 }

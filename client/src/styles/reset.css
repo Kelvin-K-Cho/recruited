@@ -3,10 +3,11 @@ html, body, div, span, h1, h2, h3, p, img, strong, center, ol, ul, li, nav, butt
   padding: 0;
   border: 0;
   font-size: 100%;
-  font-family: "Cochin";
+  font-family: 'Roboto', sans-serif;
   vertical-align: baseline;
   background: transparent;
   box-sizing: border-box;
+  letter-spacing: 1px;
 }
 
 html, body {
@@ -16,4 +17,8 @@ html, body {
 #root {
   height: 100%;
   position: relative;
+}
+
+body  {
+background: linear-gradient(to right, blue 0%,black 50%,#000000 50%,black 50%,blue 100%);
 }
