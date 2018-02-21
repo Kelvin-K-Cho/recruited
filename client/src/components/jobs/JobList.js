@@ -13,18 +13,20 @@ class JobList extends React.Component {
   renderJobs(){
     return this.props.jobs.reverse().map(job => {
       return (
-        <div key={job._id}>
-          <div>
-            <div>{job.title} - {job.type}</div>
+        <Link to={`/jobs/${job._id}`}>
+          <div key={job._id}>
             <div>
-              <Link to={`${job.company_url}`}>{job.company}</Link>
-              &#160;- {job.location}
+              <div>{job.title} - {job.type}</div>
+              <div>
+                <Link to={`${job.company_url}`}>{job.company}</Link>
+                &#160;- {job.location}
+              </div>
+              <div>$ {job.salaryEstimate}</div>
+              <div>{job.summary}</div>
+              <p>Post On:{new Date(job.dateCreated).toLocaleDateString()}</p>
             </div>
-            <div>$ {job.salaryEstimate}</div>
-            <div>{job.summary}</div>
-            <p>Post On:{new Date(job.dateCreated).toLocaleDateString()}</p>
           </div>
-        </div>
+        </Link>
       );
     });
   }

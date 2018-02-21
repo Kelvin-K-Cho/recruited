@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import { reducer as reduxForm } from 'redux-form';
 import authReducer from './authReducer';
-import entitiesReducer from './entities_reducer';
+import entitiesReducer from './entitiesReducer';
 
 export default combineReducers({
   entities: entitiesReducer,
