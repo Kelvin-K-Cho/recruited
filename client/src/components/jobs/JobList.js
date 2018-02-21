@@ -15,20 +15,20 @@ class JobList extends React.Component {
       return (
           <div className="job-index-item-outer-div"key={job._id}>
             <div className="job-index-item-inner-div">
-            <Link className="link-to-job-show-page" to={`/jobs/${job._id}`}>
-              <div className="job-index-item-name">{job.title} - {job.type}</div>
-              <div className="job-index-item-info">
-                <Link to={`${job.company_url}`}>{job.company}</Link>
-                &#160;- {job.location}
-              </div>
-              <span className="job-index-item-estimate">Estimated Salary: </span>
-              <div className="job-index-item-salary">$ {job.salaryEstimate}</div>
-              <p className="job-index-item-description">Job Description: </p>
-              <div className="job-index-item-summary">{job.summary}</div>
-              <p className="job-index-item-post-date">Posted On:</p>
-              <p className="job-index-item-date">
-              {new Date(job.dateCreated).toLocaleDateString()}
-              </p>
+              <Link className="link-to-job-show-page" to={`/jobs/${job._id}`}>
+                <div className="job-index-item-name">{job.title} - {job.type}</div>
+                <div className="job-index-item-info">
+                  <a target="_blank" href={`http://${job.company_url}`}>{job.company}</a>
+                  &#160;- {job.location}
+                </div>
+                <span className="job-index-item-estimate">Estimated Salary: </span>
+                <div className="job-index-item-salary">$ {job.salaryEstimate}</div>
+                <p className="job-index-item-description">Job Description: </p>
+                <div className="job-index-item-summary">{job.summary}</div>
+                <p className="job-index-item-post-date">Posted On:</p>
+                <p className="job-index-item-date">
+                {new Date(job.dateCreated).toLocaleDateString()}
+                </p>
               </Link>
             </div>
           </div>

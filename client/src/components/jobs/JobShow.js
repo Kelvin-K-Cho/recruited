@@ -17,7 +17,7 @@ class JobShow extends React.Component {
         <div className="job-show-page-main-div">
           <div className="job-show-page-title">{job.title} - {job.type}</div>
           <div className="job-show-page-url">
-            <Link className="job-show-page-link" to={`${job.company_url}`}>{job.company}</Link>
+            <a className="job-show-page-link" target="_blank" href={`http://${job.company_url}`}>{job.company}</a>
             &#160;- {job.location}
           </div>
           <div className="job-show-page-salary">$ {job.salaryEstimate}</div>
