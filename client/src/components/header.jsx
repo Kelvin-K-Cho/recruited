@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from "react-redux";
+import mammoth from 'mammoth';
 
 class Header extends React.Component {
   constructor(props) {
@@ -52,10 +53,11 @@ class Header extends React.Component {
             className="close-button"
             src="https://www.materialui.co/materialIcons/navigation/close_grey_192x192.png">
           </img>
-          <div>Upload your resume (.doc, .txt)</div>
+          <div>Upload your resume (.doc, .docx)</div>
             <input id="resume-input" type="file"/>
           <input onClick={() => this.handleFile()}
-            type="submit" value="Submit" />
+            type="text" value="Submit" />
+          <div id="file-review">File Review:</div>
         </form>
       </div>
     );
@@ -63,14 +65,24 @@ class Header extends React.Component {
 
   handleFile() {
     const resume = document.getElementById('resume-input').files[0];
-    console.log(resume);
+    const review = document.getElementById('file-review');
+    let resumeText; // later to save raw text of resume file
+
     if (resume) {
       let reader = new FileReader();
       reader.onload = (e) => {  // initialize event on reader
-        // save result into variable
-        console.log(e.target.result);
+        // save result into arrayBuffer
+        const arrayBuffer = e.target.result;
+        // Using mammoth to convert arrayBuffer into Raw Text
+        mammoth.extractRawText({
+          arrayBuffer: arrayBuffer
+        }).then((result) => {resumeText = result.value;});
+        // Using mammoth to convert arrayBuffer into inner HTML
+        mammoth.convertToHtml({
+          arrayBuffer: arrayBuffer
+        }).then((result) => {review.innerHTML = result.value;});
       };
-      reader.readAsText(resume);  // start reading, can only read .txt
+      reader.readAsArrayBuffer(resume);  // start reading
       // should call action to save variable to database
     }
   }
@@ -78,7 +90,6 @@ class Header extends React.Component {
   render() {
     return (
       <div className="outer-navigation-div">
-
         {this.renderContent()}
       </div>
     );
