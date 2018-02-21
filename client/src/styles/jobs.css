@@ -1,5 +1,5 @@
 .button-logged-in-google-real {
-  color: #e907ce;
+  color: #ff0000;
   text-decoration: none;
   position: absolute;
   right: 50px;
@@ -37,20 +37,23 @@
   margin-right: auto;
   margin-left: auto;
   padding-top: 62px;
-  font-size: 48px;
+  /* font-size: 48px; */
   color: #0f1662;
+  font-family: "Avenir Next", Avenir, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: 6px;
+  font-size: 76px;
 }
 
 .logged-in-inner-navigation-div {
   height: 100%;
   display: flex;
   justify-content: space-between;
-  background: #59e1e1;
+  background: #9df5f5;
 }
 
 .logged-in-main-div {
   height: 100%;
-  background: #59e1e1;
+  background: #9df5f5;
 }
 
 .logged-in-header {
@@ -74,7 +77,7 @@
 }
 
 .link-to-create-job {
-  color: #e907ce;
+  color: #ff0000;
   text-decoration: none;
   padding: 5px 10px 5px 10px;
   background: #fff4f4;
@@ -105,11 +108,21 @@
   padding: 15px;
   border: 1px solid black;
   margin-bottom: 30px;
-  background: cyan;
+  background: #eaf9f9;
   border-radius: 5px;
   transition: width 0.25s;
   margin-right: auto;
   margin-left: auto;
+}
+
+.link-to-job-show-page {
+  text-decoration: none;
+  color: black;
+}
+
+.link-to-job-show-page:visited {
+  text-decoration: none;
+  color: black;
 }
 
 .job-index-item-inner-div:hover {
@@ -154,7 +167,6 @@
   width: 480px;
   margin-left: auto;
   margin-right: auto;
-
 }
 
 .job-index-item-post-date {
@@ -172,4 +184,10 @@
   margin-top: 3px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.job-show-page-outer-div {
+  height: 100%;
+  position: fixed;
+  background: #9df5f5;
 }

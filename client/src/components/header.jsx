@@ -11,7 +11,7 @@ class Header extends React.Component {
         return (
           <div className="inner-navigation-div">
             <h1 className="logo">𝓡</h1>
-            <h1 className="landing-header">≋R≋E≋C≋R≋U≋I≋T≋E≋D≋</h1>
+            <h1 className="landing-header">Recruited</h1>
             <a className="button-login-google-fake" href="/auth/google">Login With Google</a>
           </div>
         );
@@ -19,7 +19,7 @@ class Header extends React.Component {
         return (
         <div className="logged-in-inner-navigation-div">
           <h1 className="logged-in-logo">𝓡</h1>
-          <h1 className="logged-in-landing-header">≋R≋E≋C≋R≋U≋I≋T≋E≋D≋</h1>
+          <h1 className="logged-in-landing-header">Recruited</h1>
           <span className="span-logged-in">
             <a className="button-logged-in-google-real" href="/api/logout">Logout</a>
           </span>

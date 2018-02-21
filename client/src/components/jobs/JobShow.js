@@ -13,20 +13,20 @@ class JobShow extends React.Component {
   renderJob(){
     const {job} = this.props;
     return (
-      <div key={job._id}>
-        <div>
-          <div>{job.title} - {job.type}</div>
-          <div>
-            <Link to={`${job.company_url}`}>{job.company}</Link>
+      <div className="job-show-page-inner-div" key={job._id}>
+        <div className="job-show-page-main-div">
+          <div className="job-show-page-title">{job.title} - {job.type}</div>
+          <div className="job-show-page-url">
+            <Link className="job-show-page-link" to={`${job.company_url}`}>{job.company}</Link>
             &#160;- {job.location}
           </div>
-          <div>$ {job.salaryEstimate}</div>
-          <div>{job.summary}</div>
-          <div>Responsibilities: </div>
-          <div>{job.responsibilities}</div>
-          <div>Qualifications: </div>
-          <div>{job.qualifications}</div>
-          <p>Post On:{new Date(job.dateCreated).toLocaleDateString()}</p>
+          <div className="job-show-page-salary">$ {job.salaryEstimate}</div>
+          <div className="job-show-page-summary">{job.summary}</div>
+          <div className="job-show-page-responsibility-header">Responsibilities: </div>
+          <div className="job-show-page-responsibility">{job.responsibilities}</div>
+          <div className="job-show-page-qual-header">qualifications: </div>
+          <div className="job-show-page-qual">{job.qualifications}</div>
+          <p className="job-show-page-posted-date">Post On:{new Date(job.dateCreated).toLocaleDateString()}</p>
         </div>
       </div>
     );
@@ -36,7 +36,7 @@ class JobShow extends React.Component {
     console.log(this.props);
     if (!this.props.job) return (<div>Loading...</div>);
     return (
-      <div>
+      <div className="job-show-page-outer-div">
         {this.renderJob()}
       </div>
     );
