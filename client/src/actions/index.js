@@ -41,3 +41,8 @@ export const fetchJob = (id) => dispatch => (
       payload: res.data // because it returns as an array
     }))
 );
+
+export const submitResume = (values) => dispatch => (
+  axios.post('/api/resumes', values)
+    .then(res => console.log(res))
+);

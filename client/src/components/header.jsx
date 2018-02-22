@@ -1,10 +1,13 @@
 import React from 'react';
 import { connect } from "react-redux";
+import mammoth from 'mammoth';
 
 class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {openResume: false};
+    this.resumeText;
+    this.resumeHTML;
   }
 
   renderContent(){
@@ -52,25 +55,39 @@ class Header extends React.Component {
             className="close-button"
             src="https://www.materialui.co/materialIcons/navigation/close_grey_192x192.png">
           </img>
-          <div>Upload your resume (.doc, .txt)</div>
-            <input id="resume-input" type="file"/>
-          <input onClick={() => this.handleFile()}
+          <div>Upload your resume (.doc, .docx)</div>
+            <input onChange={() => this.handleFile()} id="resume-input" type="file"/>
+          <input onClick={() => this.submitFile()}
             type="submit" value="Submit" />
+          <div id="file-review">File Review</div>
         </form>
       </div>
     );
   }
 
+  submitFile() {
+    
+  }
+
   handleFile() {
     const resume = document.getElementById('resume-input').files[0];
-    console.log(resume);
+    const review = document.getElementById('file-review');
+
     if (resume) {
       let reader = new FileReader();
       reader.onload = (e) => {  // initialize event on reader
-        // save result into variable
-        console.log(e.target.result);
+        // save result into arrayBuffer
+        const arrayBuffer = e.target.result;
+        // Using mammoth to convert arrayBuffer into Raw Text
+        mammoth.extractRawText({
+          arrayBuffer: arrayBuffer
+        }).then((result) => {this.resumeText = result.value;});
+        // Using mammoth to convert arrayBuffer into inner HTML
+        mammoth.convertToHtml({
+          arrayBuffer: arrayBuffer
+        }).then((result) => {review.innerHTML = result.value;});
       };
-      reader.readAsText(resume);  // start reading, can only read .txt
+      reader.readAsArrayBuffer(resume);  // start reading
       // should call action to save variable to database
     }
   }
@@ -78,7 +95,6 @@ class Header extends React.Component {
   render() {
     return (
       <div className="outer-navigation-div">
-
         {this.renderContent()}
       </div>
     );
