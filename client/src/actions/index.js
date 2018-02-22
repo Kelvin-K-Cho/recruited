@@ -42,7 +42,8 @@ export const fetchJob = (id) => dispatch => (
     }))
 );
 
-export const submitResume = (values) => dispatch => (
+export const submitResume = (values) => dispatch => {
+  console.log('calling api');
   axios.post('/api/resumes', values)
-    .then(res => console.log(res))
-);
+    .then(res => console.log(res));
+};
