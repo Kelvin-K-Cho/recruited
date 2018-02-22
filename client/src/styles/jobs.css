@@ -344,3 +344,73 @@
   text-decoration: none;
   color: black;
 }
+
+/* REVIEWING FORM */
+
+.outer-review-form-div {
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  flex-direction: column;
+}
+
+.review-value {
+  margin-top: 10px;
+}
+
+.review-value-textarea {
+  overflow-wrap: break-word;
+  margin-top: 10px;
+}
+
+.review-main-div {
+  margin-bottom: 10px;
+}
+
+.review-label {
+  font-weight: 700;
+  color: #d23939;
+  /* margin-bottom: 10px; */
+}
+
+.confirm-job-header {
+  color: red;
+}
+
+.review-value-textarea {
+  text-align: left;
+}
+
+.back-button-new-job {
+  padding: 5px 10px 5px 10px;
+  /* padding: 10px 20px; */
+  border-radius: 4px;
+  border: 1px solid black;
+  outline: none;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  background: white;
+}
+
+.back-button-new-job:hover {
+  background: lightgray;
+  cursor: pointer;
+}
+
+.submit-button-new-job {
+  padding: 5px 10px 5px 10px;
+  /* padding: 10px 20px; */
+  border-radius: 4px;
+  border: 1px solid black;
+  outline: none;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  background: white;
+}
+
+.submit-button-new-job:hover {
+  background: lightgray;
+  cursor: pointer;
+}
