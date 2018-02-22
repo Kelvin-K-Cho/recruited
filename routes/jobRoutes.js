@@ -5,16 +5,22 @@ const Job = mongoose.model('jobs');
 module.exports = app => {
 
   app.get('/api/jobs', requireLogin, (req, res) => {
+    //Find all the jobs.
     Job.find({})
+    //Omit the following fields.
       .select({responsibilities: 0, qualifications: 0, experience: 0})
+      //receive a promise that's an array of all jobs
       .then((jobsArr) => {
+        //sort the jobs by dateCreated (ascending)
         jobsArr.sort(function(a,b){
           return a.dateCreated - b.dateCreated;
         });
         const jobs = {};
+        //Populate a POJO using array functions
         jobsArr.forEach(job => {
           jobs[job.id] = job;
         });
+        //Send the payload to the frontend.
         res.send(jobs);
       });
   });
