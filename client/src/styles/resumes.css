@@ -1,4 +1,9 @@
 .resume-container {
   background: white;
-  font-size: 70%;
+  font-size: 100%;
+  width: 700px;
+  max-height: 500px;
+  margin: 40px auto;
+  padding: 20px 40px;
+  overflow: scroll;
 }
