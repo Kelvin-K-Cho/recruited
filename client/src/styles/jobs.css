@@ -356,11 +356,22 @@
 
 .review-value {
   margin-top: 10px;
+  border: 1px solid white;
+  background: white;
+  border-radius: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .review-value-textarea {
   overflow-wrap: break-word;
   margin-top: 10px;
+  border: 1px solid white;
+  background: white;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .review-main-div {
@@ -379,6 +390,8 @@
 
 .review-value-textarea {
   text-align: left;
+  border: 1px solid white;
+  background: white;
 }
 
 .back-button-new-job {
