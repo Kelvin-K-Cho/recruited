@@ -11,13 +11,13 @@ const mongoose = require("mongoose");
 const keys = require("../config/keys");
 
 //Since MongoDB follows NoSQL, mongoose takes the User model (defined elseware) to enforce structure.
-const User = mongoose.model("users");
+const User = mongoose.model("user");
 
-//passport grabs the specific user data from google once google verifies the user.
+//passport grabs the specific user id from google once google verifies the user.
 passport.serializeUser((user, done) => {
   done(null, user.id);
 });
-//passport preserves the user data that can be passed on to the state.
+//passport finds the user by id and preserves the user data to be passed on to the state.
 passport.deserializeUser((id, done) => {
   User.findById(id).then(user => {
     done(null, user);
@@ -39,7 +39,11 @@ passport.use(
         if (existingUser) {
           done(null, existingUser);
         } else {
-          new User({ googleId: profile.id })
+          new User({
+            googleId: profile.id,
+            email: profile.emails[0].value,
+            fullName: profile.displayName
+          })
             .save()
             .then(user => done(null, user));
         }
