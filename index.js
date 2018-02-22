@@ -30,6 +30,7 @@ app.use(bodyParser.json());
 //Enable cookie functionality to preserve state on user's side.
 app.use(
   cookieSession({
+    //Cookie will live for one month.
     maxAge: 30 * 24 * 60 * 60 * 1000,
     keys: [keys.cookieKey]
   })
