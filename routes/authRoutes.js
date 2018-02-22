@@ -1,3 +1,4 @@
+//passport has built in methods to execute authentication.
 const passport = require("passport");
 
 module.exports = (app) => {
