@@ -15,8 +15,10 @@ class ResumeList extends React.Component {
   }
 
   componentDidUpdate() {  // render resume after element loaded and updated with state data
-    document.getElementById('resume-view')
-      .innerHTML = this.props.resumes[this.state.resumeIndex].resumeHTML;
+    if (this.props.resumes[this.state.resumeIndex]) {
+      document.getElementById('resume-view')
+        .innerHTML = this.props.resumes[this.state.resumeIndex].resumeHTML;
+    }
   }
 
   render() {
