@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from "react-redux";
+import { Link } from 'react-router-dom';
 
 class Header extends React.Component {
   constructor(props) {
@@ -24,7 +25,8 @@ class Header extends React.Component {
       default:
         return (
         <div className="logged-in-inner-navigation-div">
-          <h1 className="logged-in-logo">𝓡</h1>
+          <Link to="/jobs"><h1 className="logged-in-logo">𝓡</h1>
+          </Link>
           <h1 className="logged-in-landing-header">Recruited</h1>
           <span className="span-logged-in">
             <a className="button-logged-in-google-real" href="/api/logout">Logout</a>
