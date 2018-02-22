@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from "react-redux";
 import mammoth from 'mammoth';
 
+import {submitResume} from '../actions';
+
 class Header extends React.Component {
   constructor(props) {
     super(props);
@@ -66,7 +68,11 @@ class Header extends React.Component {
   }
 
   submitFile() {
-    
+    console.log("submitting");
+    this.props.submitResume({
+      resumeText: this.resumeText,
+      resumeHTML: this.resumeHTML
+    });
   }
 
   handleFile() {
@@ -105,4 +111,10 @@ function mapStateToProps({ auth }) {
   return { auth };
 }
 
-export default connect(mapStateToProps)(Header);
+function mapDispatchToProps(dispatch) {
+  return {
+    submitResume: (values) => dispatch(submitResume(values))
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

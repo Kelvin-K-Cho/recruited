@@ -33,7 +33,6 @@ class JobShow extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     if (!this.props.job) return (<div></div>);
     return (
       <div className="job-show-page-outer-div">
@@ -44,8 +43,6 @@ class JobShow extends React.Component {
 }
 
 function mapStateToProps(state, ownProps) {
-  console.log(ownProps);
-  console.log(state.entities.jobs[ownProps.match.params.id]);
   return { job: state.entities.jobs[ownProps.match.params.id] };
 }
 
