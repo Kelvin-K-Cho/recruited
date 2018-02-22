@@ -13,13 +13,15 @@ html, body, div, span, h1, h2, h3, p, img, strong, center, ol, ul, li, nav, butt
 html, body {
   height: 100%;
   overflow: scroll;
-  background: #9df5f5;
+  background-size:cover;
+  background-blend-mode: lighten;
+  background-image: linear-gradient(to right, rgb(38, 23, 23), rgb(178, 178, 178)),url(https://static.pexels.com/photos/327540/pexels-photo-327540.jpeg);
 }
 
 #root {
   height: 100%;
   position: relative;
-  background: #9df5f5;
+  /* background: #9df5f5; */
 }
 /*
 body  {
