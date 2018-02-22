@@ -57,11 +57,9 @@ module.exports = app => {
       dateCreated: Date.now()
     });
 
-    job.save((err) => {
-      if (err) { return res.send(err); }
-    }).then(() => {
-      res.send(user.job); // send job information for review
-    });
+    job.save().then(
+      res.send(user.job) // send job information for review
+    );
 
   });
 
