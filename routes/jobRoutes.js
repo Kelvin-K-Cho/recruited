@@ -56,7 +56,8 @@ module.exports = app => {
 
     job.save((err) => {
       if (err) { return res.send(err); }
-      res.send(user.job); // send job informatin for review
+    }).then(() => {
+      res.send(user.job); // send job information for review
     });
 
   });
