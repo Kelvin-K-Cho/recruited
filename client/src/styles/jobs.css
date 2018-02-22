@@ -44,7 +44,7 @@
   margin-left: auto;
   padding-top: 62px;
   /* font-size: 48px; */
-  color: #0f1662;
+  color: #ffffff;
   font-family: "Avenir Next", Avenir, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
   letter-spacing: 6px;
   font-size: 76px;
@@ -54,17 +54,17 @@
   height: 100%;
   display: flex;
   justify-content: space-between;
-  background: #9df5f5;
+  /* background: #9df5f5; */
 }
 
 .logged-in-main-div {
   height: 100%;
-  background: #9df5f5;
+  /* background: #9df5f5; */
 }
 
 .logged-in-header {
   text-align: center;
-  color: #0e2aff;
+  color: #ffffff;
   padding-top: 20px;
   font-size: 24px;
 }
@@ -204,7 +204,7 @@
 .job-show-page-outer-div {
   height: 100%;
   position: fixed;
-  background: #9df5f5;
+  /* background: #9df5f5; */
 }
 
 /* RESUME */
@@ -259,7 +259,7 @@
 
 .job-form-outer-div {
   height: 100%;
-  background: #9df5f5;
+  /* background: #9df5f5; */
   text-align: center;
 }
 
@@ -356,11 +356,22 @@
 
 .review-value {
   margin-top: 10px;
+  border: 1px solid white;
+  background: white;
+  border-radius: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .review-value-textarea {
   overflow-wrap: break-word;
   margin-top: 10px;
+  border: 1px solid white;
+  background: white;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .review-main-div {
@@ -379,6 +390,8 @@
 
 .review-value-textarea {
   text-align: left;
+  border: 1px solid white;
+  background: white;
 }
 
 .back-button-new-job {
@@ -413,4 +426,51 @@
 .submit-button-new-job:hover {
   background: lightgray;
   cursor: pointer;
+}
+
+.job-show-page-outer-div {
+  width: 100%;
+}
+
+.job-show-page-main-div {
+  width: 500px;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  background: lightgray;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.job-show-page-title {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.job-show-page-summary-header {
+  margin-top: 10px;
+  color: red;
+}
+
+.job-show-page-summary {
+  margin-top: 6px;
+}
+
+.job-show-page-responsibility-header {
+  margin-top: 10px;
+  color: red;
+}
+
+.job-show-page-responsibility {
+  margin-top: 6px;
+}
+
+.job-show-page-qual-header {
+  margin-top: 10px;
+  color: red;
+}
+
+.job-show-page-qual {
+  margin-top: 6px;
 }
