@@ -56,8 +56,7 @@ module.exports = (job, resumes) => {
       if (resume.resumeText.includes(keyword)) matchCount ++;
     });
 
-    dupResumes[idx]['percentMatch'] = matchCount / thisJobKeywords.length;
+    dupResumes[idx].percentMatch = matchCount / thisJobKeywords.length;
   });
-  // console.log(dupResumes[0]);
   return dupResumes;
 };
