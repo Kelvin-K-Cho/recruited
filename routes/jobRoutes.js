@@ -8,6 +8,9 @@ module.exports = app => {
     Job.find({})
       .select({responsibilities: 0, qualifications: 0, experience: 0})
       .then((jobsArr) => {
+        jobsArr.sort(function(a,b){
+          return a.dateCreated - b.dateCreated;
+        });
         const jobs = {};
         jobsArr.forEach(job => {
           jobs[job.id] = job;
