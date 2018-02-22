@@ -16,6 +16,7 @@ class ResumeList extends React.Component {
 
   componentDidUpdate() {  // render resume after element loaded and updated with state data
     if (this.props.resumes[this.state.resumeIndex]) {
+      console.log(this.props.resumes[this.state.resumeIndex].percentMatch);
       document.getElementById('resume-view')
         .innerHTML = this.props.resumes[this.state.resumeIndex].resumeHTML;
     } else {
@@ -33,6 +34,7 @@ class ResumeList extends React.Component {
   }
 
   render() {
+    console.log(this.state.resume);
     const {resumes} = this.props;
     // if (!resumes[this.state.resumeIndex]) return (<div>Loading</div>);
     return (
