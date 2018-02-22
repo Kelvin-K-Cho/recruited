@@ -18,18 +18,39 @@ class ResumeList extends React.Component {
     if (this.props.resumes[this.state.resumeIndex]) {
       document.getElementById('resume-view')
         .innerHTML = this.props.resumes[this.state.resumeIndex].resumeHTML;
+    } else {
+      document.getElementById('resume-view')
+        .innerHTML = "<div>There is no resume to show</div>";
     }
   }
 
+  handleButton(e) {
+    if (e.text === "Approve") {
+      // save to list of approved resumes:
+    }
+    // next:
+    // if (this.state.resumeIndex < this.props.resumes.length - 1) {
+    this.setState({resumeIndex: this.state.resumeIndex + 1});
+    console.log(this.state);
+    // }
+  }
+
   render() {
-    console.log(this.props.resumes);
     const {resumes} = this.props;
-    if (!resumes[this.state.resumeIndex]) return (<div>Loading</div>);
+    // if (!resumes[this.state.resumeIndex]) return (<div>Loading</div>);
     return (
       <div>
         <div className="resume-container">
-          <div id="resume-view">Resume</div>
+          <div id="resume-view"></div>
         </div>
+        <button className="resume-approve"
+          onClick={(e) => this.handleButton(e)}>
+          Approve
+        </button>
+        <button className="resume-decline"
+          onClick={(e) => this.handleButton(e)}>
+          Decline
+        </button>
       </div>
     );
   }

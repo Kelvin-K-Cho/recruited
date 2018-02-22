@@ -17,6 +17,7 @@ const keys = require("./config/keys");
 const bodyParser = require("body-parser");
 require("./models/User");
 require("./models/Jobs");
+require("./models/Resumes");
 require("./services/passport");
 
 //mongoose connects us to the offsite database for our development/production environment
@@ -43,6 +44,7 @@ app.use(passport.session());
 //Add the routes for application CRUD.
 require("./routes/authRoutes")(app);
 require("./routes/jobRoutes")(app);
+require("./routes/resumeRoutes")(app);
 
 //If the deployment of the application is on the production level, the app will create
 //an optimized version of the build to run efficiently in the production environment
