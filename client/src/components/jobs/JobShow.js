@@ -110,6 +110,9 @@ class JobShow extends React.Component {
         <button className="resume-button" onClick={()=> this.setState({openResume: true})}>
           Upload Resume
         </button>
+        <button className="resume-list-button">
+          <Link to={`/jobs/${this.props.match.params.id}/resumes`}>See Resumes</Link>
+        </button>
         <div>{this.renderResumeModal()}</div>
         {this.renderJob()}
       </div>
