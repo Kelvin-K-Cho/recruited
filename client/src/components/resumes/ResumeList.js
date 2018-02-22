@@ -29,10 +29,7 @@ class ResumeList extends React.Component {
       // save to list of approved resumes:
     }
     // next:
-    // if (this.state.resumeIndex < this.props.resumes.length - 1) {
     this.setState({resumeIndex: this.state.resumeIndex + 1});
-    console.log(this.state);
-    // }
   }
 
   render() {
