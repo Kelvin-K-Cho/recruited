@@ -1,7 +1,8 @@
 import axios from "axios";
 import { FETCH_USER,
   FETCH_JOBS,
-  FETCH_JOB
+  FETCH_JOB,
+  FETCH_RESUMES
 } from "./types";
 
 // export const changeLogin = shouldBeLoggedIn => {
@@ -42,8 +43,15 @@ export const fetchJob = (id) => dispatch => (
     }))
 );
 
+export const fetchResumes = (jobId) => dispatch => {
+  axios.get(`/api/jobs/${jobId}/resumes`)
+    .then(res => dispatch({
+      type: FETCH_RESUMES,
+      payload: res.data
+    }));
+};
+
 export const submitResume = (values) => dispatch => {
-  console.log('calling api');
   axios.post('/api/resumes', values)
     .then(res => console.log(res));
 };
