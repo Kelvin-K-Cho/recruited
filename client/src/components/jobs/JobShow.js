@@ -20,11 +20,12 @@ class JobShow extends React.Component {
             <a className="job-show-page-link" target="_blank" href={`http://${job.company_url}`}>{job.company}</a>
             &#160;- {job.location}
           </div>
-          <div className="job-show-page-salary">$ {job.salaryEstimate}</div>
+          <div className="job-show-page-salary">Salary: $ {job.salaryEstimate}</div>
+          <div className="job-show-page-summary-header">Summary: </div>
           <div className="job-show-page-summary">{job.summary}</div>
           <div className="job-show-page-responsibility-header">Responsibilities: </div>
           <div className="job-show-page-responsibility">{job.responsibilities}</div>
-          <div className="job-show-page-qual-header">qualifications: </div>
+          <div className="job-show-page-qual-header">Qualifications: </div>
           <div className="job-show-page-qual">{job.qualifications}</div>
           <p className="job-show-page-posted-date">Post On:{new Date(job.dateCreated).toLocaleDateString()}</p>
         </div>
