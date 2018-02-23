@@ -3,6 +3,7 @@ import { FETCH_USER,
   FETCH_JOBS,
   FETCH_JOB,
   FETCH_RESUMES,
+  UPDATE_RESUME,
   FETCH_MY_CREATED_JOBS,
   REMOVE_JOB
 } from "./types";
@@ -50,7 +51,12 @@ export const submitResume = (values) => dispatch => {
 };
 
 export const updateResume = (id, values) => dispatch => {
-  axios.patch(`/api/resumes/${id}`, values);  // PLEASE DONT USE PUT!!
+  console.log("calling update");
+  axios.patch(`/api/resumes/${id}`, values) // PLEASE DONT USE PUT!!
+    .then((res) => dispatch({
+      type: UPDATE_RESUME,
+      payload: res.data
+    }));
 };
 
 export const fetchMyJobs = (userId) => dispatch => {
