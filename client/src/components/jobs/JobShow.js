@@ -90,14 +90,14 @@ class JobShow extends React.Component {
             <a className="job-show-page-link" target="_blank" href={`http://${job.company_url}`}>{job.company}</a>
             &#160;- {job.location}
           </div>
-          <div className="job-show-page-salary">Salary: $ {job.salaryEstimate}</div>
+          <div className="job-show-page-salary">Estimated Salary: $ {job.salaryEstimate}</div>
           <div className="job-show-page-summary-header">Summary: </div>
           <div className="job-show-page-summary">{job.summary}</div>
           <div className="job-show-page-responsibility-header">Responsibilities: </div>
           <div className="job-show-page-responsibility">{job.responsibilities}</div>
           <div className="job-show-page-qual-header">Qualifications: </div>
           <div className="job-show-page-qual">{job.qualifications}</div>
-          <p className="job-show-page-posted-date">Post On:{new Date(job.dateCreated).toLocaleDateString()}</p>
+          <p className="job-show-page-posted-date"><span className="posted-on-date-show-page">Posted On : </span><span className="posted-on-date-show-page-value">{new Date(job.dateCreated).toLocaleDateString()}</span></p>
         </div>
       </div>
     );
@@ -108,7 +108,7 @@ class JobShow extends React.Component {
     return (
       <div className="job-show-page-outer-div">
         <button className="resume-button" onClick={()=> this.setState({openResume: true})}>
-          Upload Resume
+          Upload Resume And Apply
         </button>
         <button className="resume-list-button">
           <Link to={`/jobs/${this.props.match.params.id}/resumes`}>See Resumes</Link>
