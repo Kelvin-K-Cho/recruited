@@ -15,9 +15,11 @@ class ResumeList extends React.Component {
   }
 
   componentDidUpdate() {  // render resume after element loaded and updated with state data
-    if (this.props.resumes[this.state.resumeIndex]) {
+    const resume = this.props.resumes[this.state.resumeIndex];
+    if (resume) {
+      const percentMatch = resume.percentMatch.toFixed(2) * 100;
       document.getElementById('resume-view')
-        .innerHTML = this.props.resumes[this.state.resumeIndex].resumeHTML;
+        .innerHTML = `<div>Percentage Match: ${percentMatch}%</div>` + this.props.resumes[this.state.resumeIndex].resumeHTML;
     } else {
       document.getElementById('resume-view')
         .innerHTML = "<div>There is no resume to show</div>";
@@ -33,6 +35,7 @@ class ResumeList extends React.Component {
   }
 
   render() {
+    console.log(this.state.resume);
     const {resumes} = this.props;
     // if (!resumes[this.state.resumeIndex]) return (<div>Loading</div>);
     return (
