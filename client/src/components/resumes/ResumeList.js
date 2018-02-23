@@ -2,7 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchResumes, updateResume } from '../../actions';
 
-import {Link} from 'react-router-dom';
+//Deprecated import
+// import {Link} from 'react-router-dom';
 
 class ResumeList extends React.Component {
   constructor(props) {
@@ -56,7 +57,7 @@ class ResumeList extends React.Component {
   }
 
   render() {
-    const {resumes} = this.props;
+    // const {resumes} = this.props;
     // if (!resumes[this.state.resumeIndex]) return (<div>Loading</div>);
     return (
       <div>

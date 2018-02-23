@@ -92,3 +92,27 @@
 .link-to-user-profile:hover {
   background:lightgray;
 }
+
+.link-back-to-show-page {
+  text-decoration: none;
+  color:black;
+}
+
+.link-back-to-show-page:visited {
+  text-decoration: none;
+  color: black;
+}
+
+.css-127t0wo {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 300px;
+}
+
+.css-s9d665 {
+  background-color: #ea6969;
+}
+
+.css-1ub59h3 {
+  background-color: #ea6969;
+}
