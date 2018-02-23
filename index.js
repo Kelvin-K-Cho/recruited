@@ -20,6 +20,7 @@ require("./models/Jobs");
 require("./models/Resumes");
 require("./services/passport");
 
+
 //mongoose connects us to the offsite database for our development/production environment
 mongoose.connect(keys.mongoURI);
 
@@ -45,6 +46,7 @@ app.use(passport.session());
 require("./routes/authRoutes")(app);
 require("./routes/jobRoutes")(app);
 require("./routes/resumeRoutes")(app);
+require("./routes/profileRoutes")(app);
 
 //If the deployment of the application is on the production level, the app will create
 //an optimized version of the build to run efficiently in the production environment
