@@ -16,15 +16,18 @@ module.exports = app => {
 
     Resumes.find({_user: req.params.id})
       .then((resumes) => {
+        if (resumes.length === 0) {
+          res.send({appliedJobs, createdJobs});
+        }
         resumes.forEach((resume, idx) => {
           Jobs.find({_id: resume._job})
-            .then(job => {
-              appliedJobs.push(job[0]);
-              if (idx === resumes.length-1) {
-                console.log(appliedJobs);
-                res.send({appliedJobs, createdJobs});
-              }
-            });
+          .then(job => {
+            appliedJobs.push(job[0]);
+            if (idx === resumes.length-1) {
+              console.log(appliedJobs);
+              res.send({appliedJobs, createdJobs});
+            }
+          });
         });
       });
 
