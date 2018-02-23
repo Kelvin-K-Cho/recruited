@@ -1,24 +1,41 @@
 .my-profile-created-job-header {
-  width: 400px;
   font-size: 30px;
   color: white;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+
+.my-profile-applied-job-header {
+  font-size: 30px;
+  color: white;
+  padding-top: 30px;
+  padding-bottom: 20px;
 }
 
 .profile-outer-container {
-  /* height: 100%; */
-  /* display: flex;
-  flex-direction: column; */
-  /* display: inline-block; */
   display: flex;
-  flex-direction: column;
-  width: 425px;
-  margin-left: 50px;
+  justify-content: center;
   margin-top: 60px;
-  text-align: center;
-  align-items: center;
   padding: 20px 0px 20px 0px;
+}
+
+.created-jobs-div {
   background: gray;
   border-radius: 10px;
+  text-align: center;
+  border-radius: 10px;
+  width: 425px;
+  padding-bottom: 20px;
+}
+
+.applied-jobs-div {
+  background: gray;
+  border-radius: 10px;
+  text-align: center;
+  margin-left: 50px;
+  border-radius: 10px;
+  width: 425px;
+  padding-bottom: 20px;
 }
 
 .profile-inner-container {
@@ -27,9 +44,18 @@
   width: 400px;
   height: 100px;
   margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .my-created-jobs-container {
+  padding: 5px 10px 5px 10px;
+  border: 1px solid white;
+  background: lightgray;
+  border-radius: 10px;
+}
+
+.my-applied-job-container {
   padding: 5px 10px 5px 10px;
   border: 1px solid white;
   background: lightgray;
