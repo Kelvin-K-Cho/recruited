@@ -5,14 +5,18 @@ const matchingAlgorithm = require('../services/matchingAlgorithm');
 
 const Resume = mongoose.model('resumes');
 const Job = mongoose.model('jobs');
+const User = mongoose.model('user');
 
 module.exports = app => {
+
   app.get('/api/jobs/:id/resumes', requireLogin, (req, res) => {
     let job;
     Job.find({_id: req.params.id})
       .then((jobs) => {job = jobs[0];});
     Resume.find({_job: req.params.id})
-      .then((resumes) => {
+      .populate("_user")
+      .exec((err, resumes) => {
+        if (err) { return res.send(err);}
         const matchedResumes = matchingAlgorithm(job, resumes); //
         res.send(matchedResumes);
       });

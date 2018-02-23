@@ -6,8 +6,8 @@ const resumeSchema = new Schema({
   resumeHTML: String,
   percentMatch: Number,
   approved: {type: Boolean, default: false},
-  _job: { type: Schema.Types.ObjectId, ref: 'Job'},
-  _user: { type: Schema.Types.ObjectId, ref: 'User' },
+  _job: { type: Schema.Types.ObjectId, ref: 'job'},
+  _user: { type: Schema.Types.ObjectId, ref: 'user' },
   dateCreated: Date
 });
 
