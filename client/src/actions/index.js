@@ -52,6 +52,9 @@ export const fetchResumes = (jobId) => dispatch => {
 };
 
 export const submitResume = (values) => dispatch => {
-  axios.post('/api/resumes', values)
-    .then(res => console.log(res));
+  axios.post('/api/resumes', values);
+};
+
+export const updateResume = (id, values) => dispatch => {
+  axios.patch(`/api/resumes/${id}`, values);  // PLEASE DONT USE PUT!!
 };
