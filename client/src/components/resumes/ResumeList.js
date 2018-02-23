@@ -23,6 +23,8 @@ class ResumeList extends React.Component {
       document.getElementById('resume-view')
         .innerHTML = this.props.resumes[this.state.resumeIndex].resumeHTML;
     } else {
+      document.getElementsByClassName('resume-approve')[0].outerHTML = null;
+      document.getElementsByClassName('resume-decline')[0].outerHTML = null;
       document.getElementById('percent-match').innerHTML = "";
       document.getElementById('resume-view')
         .innerHTML = "<div>There is no resume to show</div>";
@@ -44,10 +46,11 @@ class ResumeList extends React.Component {
       if (resume.approved) approved.push(resume);
     });
     return (
-      <ul>
-        {approved.map(resume => (
-          <li>
-            <div></div>
+      <ul className="approved-list">
+        {approved.reverse().map(resume => (
+          <li className="approved-item">
+            <div>{resume._user.fullName}</div>
+            <div>{resume._user.email}</div>
           </li>
         ))}
       </ul>
@@ -63,7 +66,7 @@ class ResumeList extends React.Component {
         <div className="resume-container">
           <div id="resume-view"></div>
         </div>
-        <div>
+        <div className="approved-resume-container">
           {this.renderApprove()}
         </div>
         <button className="resume-approve"
