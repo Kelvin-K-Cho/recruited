@@ -20,6 +20,7 @@ const store = createStore(reducers, {}, applyMiddleware(reduxThunk, logger));
 
 window.axios = axios;
 // window.fetchJob = fetchJob;
+window.getState = store.getState;
 
 ReactDOM.render(
   <Provider store={store}><App /></Provider>,
