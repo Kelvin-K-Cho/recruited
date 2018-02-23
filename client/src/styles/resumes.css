@@ -1,0 +1,55 @@
+.resumelist-component {
+  display: flex;
+}
+
+.resume-container {
+  background: #ebebeb;
+  font-size: 100%;
+  width: 700px;
+  max-height: 650px;
+  margin: 10px 0 0 200px;
+  padding: 20px 40px;
+  overflow: scroll;
+  border-radius: 7px;
+}
+
+.resume-approve, .resume-decline {
+  background: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  border: 1px solid black;
+  margin: 0 auto;
+}
+
+.percent-match {
+  color: red;
+  width: 700px;
+  padding: 20px 0;
+  margin: 40px 0 0 200px;
+  border: 1px solid #aee0bc;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 140%;
+  background: #eaf5e8;
+}
+
+.approved-resume-container {
+  background: white;
+  position: fixed;
+  left: 1100px;
+  top: 260px;
+  border: 1px solid black;
+  padding: 40px 10px;
+}
+
+.approved-list {
+  list-style: none;
+}
+
+.approved-item {
+  padding: 10px;
+  background: #eaf5e8;
+  margin: 5px;
+  border-radius: 4px;
+  border: 1px solid #aee0bc;
+}

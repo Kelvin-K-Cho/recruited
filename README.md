@@ -7,11 +7,10 @@
 The allocation of highly talented workers and limited employment opportunities is never-ending.  In an attempt to simplify the process, this application is designed to pair recruiters and job seekers given the minimal amount of information.
 
 ## Functionality & MVP
-  - [ ] User authentication using Node/Express as the backend framework. (1 Day)
-  - [ ] Ability for job seekers to upload resumes and store into AWS. (1 Day)
-  - [ ] Basic CRUD functionality on both job seeker and recruiter side.
-  (1 Day)
-  - [ ] Parse submitted resumes to match job posting requirements. (1 Day)
+  - [x] User authentication using Node/Express as the backend framework. (1 Day)
+  - [x] Ability for job seekers to upload resumes and store onto MongoDB. (1 Day)
+  - [ ] Basic CRUD functionality on both job seeker and recruiter side. (1 Day)
+  - [x] Parse submitted resumes to match job posting requirements. (1 Day)
   - [ ] Allow recruiters/seekers to accept or reject resumes based on match criteria. (1 Day)
 
 
