@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../../../styles/jobs.css';
-// import JobsIndexContainer from './jobs_index_container';
-import JobList from '../JobList';
+import '../../styles/jobs.css';
+import JobList from './JobList';
 
 const Dashboard = () => {
   return (
