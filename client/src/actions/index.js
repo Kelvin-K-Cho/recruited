@@ -59,8 +59,12 @@ export const submitResume = (values) => dispatch => {
 
 export const fetchMyJobs = (userId) => dispatch => {
   axios.get(`/api/users/${userId}`)
-    .then(res => dispatch({
-      type: FETCH_MY_CREATED_JOBS,
-      payload: res.data
-    }));
+    .then(res =>
+        console.log(res.data)
+    );
 };
+
+
+// dispatch({
+//   type: FETCH_MY_CREATED_JOBS,
+//   payload: res.data
