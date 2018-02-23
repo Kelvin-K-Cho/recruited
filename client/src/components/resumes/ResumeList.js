@@ -50,7 +50,9 @@ class ResumeList extends React.Component {
   handleButton(e) {
     if (e.target.className === "resume-approve") {
       // save to list of approved resumes:
-      this.props.updateResume(this.props.resumes[this.state.resumeIndex]._id, {approved: true});
+      this.props.updateResume(this.props.resumes[this.state.resumeIndex]._id, {approved: "yes"});
+    } else {
+      this.props.updateResume(this.props.resumes[this.state.resumeIndex]._id, {approved: "no"});
     }
     // next:
     this.setState({resumeIndex: this.state.resumeIndex + 1});
@@ -72,7 +74,13 @@ class ResumeList extends React.Component {
 }
 
 function mapStateToProps(state) {
-  return { resumes: Object.values(state.entities.resumes) };
+  const pendingResumes = [];
+  if (state.entities.resumes) {
+    Object.values(state.entities.resumes).forEach(resume => {
+      if (resume.approved === "pending") pendingResumes.push(resume);
+    });
+  }
+  return { resumes: pendingResumes };
 }
 
 function mapDispatchToProps(dispatch) {
