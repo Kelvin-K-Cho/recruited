@@ -8,7 +8,7 @@ export default function (state = {}, action) {
     case FETCH_JOB:
       let newState = Object.assign({}, state);
       newState[action.payload._id] = action.payload;
-      console.log(action.payload);
+      // console.log(action.payload);
       return newState;
     default:
       return state;

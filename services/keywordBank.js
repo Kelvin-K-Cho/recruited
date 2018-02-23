@@ -1,0 +1,6 @@
+module.exports = {
+  fullstack: "Unix, REST API, jQuery, JSON, TDD, Ruby, MongoDB, Babel, Angular, Javascript, HTML5, Git, Flux, HTML, UX, Node, Redux, AWS, React, Java, CSS, Python, Ember, PHP, Nodejs, SQL, Redux, Node, Webpack, Redux, CSS3, Django, Rails, Sass, NoSQL, MySQL, ES6, MVC, redis, Emberjs, Docker, Linux, Boostrap, Linux, Reactjs",
+  web: "Unix, REST API, jQuery, JSON, TDD, Ruby, MongoDB, Babel, Angular, Javascript, HTML5, Git, Flux, HTML, UX, Node, Redux, AWS, React, Java, CSS, Python, Ember, PHP, Nodejs, SQL, Redux, Node, Webpack, Redux, CSS3, Django, Rails, Sass, NoSQL, MySQL, ES6, MVC, redis, Emberjs, Docker, Linux, Boostrap, Linux, Reactjs",
+  frontend: "Node, Github, jQuery, Django, PHP, nodejs, JSX, NPM, JSON, Mongo, AngularJS, Jest, TDD, Backbone, HTML5, Mocha, API, D3, SASS, D3, Meteorjs, Webpack, NoSQL, HTML, CSS, Javascript, Ember, SQL, ES6, Python, MongoDB, HTTP, AJAX, CSS3, Redux, REST, Rails, grunt, SCRUM, MySQL, MVC, VueJS",
+  backend: "Docker, SQS, TDD, Unix, SQL, NoSQL, Rails, RubyonRails, MongoDB, Java, AWS, C++, Cassandra, Node, DataStructures, Salesforce, Redis, API, S3, MVC, machinelearning, PostgreSQL, REST, iOS, Go, Ruby, EC2, Python, Git, Elixir, DynamoDB, Django, Hadoop, Go, Spark, PHP, Kafka, Agile, DynamoDB, Elixir"
+};

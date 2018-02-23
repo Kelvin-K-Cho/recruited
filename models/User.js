@@ -1,3 +1,5 @@
+//Use mongoose for MongoDB.  Utilize the Schema provided by mongoose for structure.
+
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
