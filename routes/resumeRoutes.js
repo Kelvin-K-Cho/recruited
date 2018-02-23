@@ -17,7 +17,13 @@ module.exports = app => {
       .populate("_user")
       .exec((err, resumes) => {
         if (err) { return res.send(err);}
-        const matchedResumes = matchingAlgorithm(job, resumes); //
+        const matchedResumesArr = matchingAlgorithm(job, resumes); // if no keywrod found, it crashes, need fix
+        const matchedResumes = {};
+        //Populate a POJO using array functions
+        matchedResumesArr.forEach(resume => {
+          matchedResumes[resume.id] = resume;
+        });
+        //Send the payload to the frontend.
         res.send(matchedResumes);
       });
   });
@@ -49,15 +55,14 @@ module.exports = app => {
   });
 
   app.patch(`/api/resumes/:id`, requireLogin, (req, res) => {
-    console.log(req.body);
     Resume.find({_id: req.params.id})
+      .populate("_user")  // populate to nest the user info
       .then((resumes) => {
         console.log("FOunded");
         resumes[0].set(req.body); //update values from request body data
-        resumes[0].save((err) => {
-          if (err) return res.send(err);
-        }).then(() => {
-          res.send("save succesful");
+        resumes[0].save((err, updatedResume) => {
+          console.log("sending");
+          res.send(updatedResume);
         });
       });
   });
