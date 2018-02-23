@@ -12,8 +12,8 @@ class JobShow extends React.Component {
   constructor(props) {
     super(props);
     this.state = {openResume: false};
-    this.resumeText;
-    this.resumeHTML;
+    this.resumeText = this.resumeText;
+    this.resumeHTML = this.resumeHTML;
   }
 
   componentDidMount() {
@@ -33,6 +33,7 @@ class JobShow extends React.Component {
         className="modal-screen">
         <form className="resume-form">
           <img onClick={()=> this.setState({openResume: false})}
+            alt="close"
             className="close-button"
             src="https://www.materialui.co/materialIcons/navigation/close_grey_192x192.png">
           </img>

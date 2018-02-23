@@ -6,8 +6,8 @@ class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {openResume: false};
-    this.resumeText;
-    this.resumeHTML;
+    this.resumeText = this.resumeText;
+    this.resumeHTML = this.resumeHTML;
   }
 
   renderContent(){

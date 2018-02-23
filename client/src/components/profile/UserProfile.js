@@ -6,15 +6,15 @@ import { Link } from 'react-router-dom';
 import Pacman from '../loader.jsx';
 
 class UserProfile extends React.Component {
-  
-  constructor(props){
-    super(props);
-  }
+
+  // constructor(props){
+  //   super(props);
+  // }
   
   componentDidMount(){
     this.props.fetchMyJobs(this.props.match.params.id);
   }
-  
+
   render() {
     if (_.isEmpty(this.props.createdJobProfile) && _.isEmpty(this.props.appliedJobProfile)) {
       return (
@@ -52,7 +52,7 @@ class UserProfile extends React.Component {
               )
             })}
           </div>
-          
+
           <div className="applied-jobs-div">
             <h1 className="my-profile-applied-job-header">My Applied Jobs</h1>
             {Object.values(this.props.appliedJobProfile).map(appliedJob => {
@@ -81,10 +81,10 @@ class UserProfile extends React.Component {
             })}
           </div>
         </div>
-        
 
-        
-        
+
+
+
       );
     }
   }
@@ -104,4 +104,3 @@ function mapDispatchToProps(dispatch, ownProps) {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserProfile);
-
