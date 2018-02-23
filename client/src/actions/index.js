@@ -3,7 +3,8 @@ import { FETCH_USER,
   FETCH_JOBS,
   FETCH_JOB,
   FETCH_RESUMES,
-  FETCH_MY_CREATED_JOBS
+  FETCH_MY_CREATED_JOBS,
+  REMOVE_JOB
 } from "./types";
 
 // export const changeLogin = shouldBeLoggedIn => {
@@ -64,3 +65,9 @@ export const fetchMyJobs = (userId) => dispatch => {
       payload: res.data
     }));
 };
+
+export const removeJob = (jobId) => dispatch => (
+  axios.delete(`/api/jobs/${jobId}`)
+    .then(res => dispatch({ type: REMOVE_JOB, payload: res.data }))
+    // .then(history.push('/jobs'))
+);
