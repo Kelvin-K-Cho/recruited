@@ -2,7 +2,7 @@
   background: white;
   font-size: 100%;
   width: 700px;
-  max-height: 500px;
+  max-height: 700px;
   margin: 40px auto;
   padding: 20px 40px;
   overflow: scroll;
@@ -15,4 +15,15 @@
   border-radius: 4px;
   border: 1px solid black;
   margin: 0 auto;
+}
+
+.percent-match {
+  color: red;
+  padding: 20px 0;
+  margin: 20px auto;
+  border: 1px solid black;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 140%;
+  background: #eaf5e8;
 }
