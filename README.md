@@ -1,6 +1,6 @@
 # Recruited
 
-### Recruited is a project designed to combine the functionality of Tinder with the practicality of Indeed.com.
+### Recruited is a full-stack single page web application designed to combine the functionality of Tinder with the practicality of Indeed.com.
 
 ## Background and Overview
 
