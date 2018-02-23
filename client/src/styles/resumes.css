@@ -1,9 +1,9 @@
 .resume-container {
-  background: white;
+  background: #ebebeb;
   font-size: 100%;
   width: 700px;
   max-height: 700px;
-  margin: 40px auto;
+  margin: 10px auto;
   padding: 20px 40px;
   overflow: scroll;
   border-radius: 7px;
@@ -19,9 +19,9 @@
 
 .percent-match {
   color: red;
+  width: 700px;
   padding: 20px 0;
-  margin: 20px auto;
-  border: 1px solid black;
+  margin: 40px auto;
   border-radius: 10px;
   text-align: center;
   font-size: 140%;

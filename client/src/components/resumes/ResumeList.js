@@ -18,10 +18,12 @@ class ResumeList extends React.Component {
     const resume = this.props.resumes[this.state.resumeIndex];
     if (resume) {
       const percentMatch = resume.percentMatch.toFixed(2) * 100;
+      document.getElementById('percent-match').innerHTML =
+        `<div class="percent-match">Percentage Match: ${percentMatch}%</div>`;
       document.getElementById('resume-view')
-        .innerHTML = `<div class="percent-match">Percentage Match: ${percentMatch}%</div>` +
-          this.props.resumes[this.state.resumeIndex].resumeHTML;
+        .innerHTML = this.props.resumes[this.state.resumeIndex].resumeHTML;
     } else {
+      document.getElementById('percent-match').innerHTML = "";
       document.getElementById('resume-view')
         .innerHTML = "<div>There is no resume to show</div>";
     }
@@ -36,13 +38,33 @@ class ResumeList extends React.Component {
     this.setState({resumeIndex: this.state.resumeIndex + 1});
   }
 
+  renderApprove() {
+    const approved = [];
+    this.props.resumes.forEach(resume => {
+      if (resume.approved) approved.push(resume);
+    });
+    return (
+      <ul>
+        {approved.map(resume => (
+          <li>
+            <div></div>
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
   render() {
     const {resumes} = this.props;
     // if (!resumes[this.state.resumeIndex]) return (<div>Loading</div>);
     return (
       <div>
+        <div id="percent-match"></div>
         <div className="resume-container">
           <div id="resume-view"></div>
+        </div>
+        <div>
+          {this.renderApprove()}
         </div>
         <button className="resume-approve"
           onClick={(e) => this.handleButton(e)}>

@@ -12,7 +12,7 @@ const jobSchema = new Schema({
   experience: String,
   location: String,
   salaryEstimate: Number,
-  _user: { type: Schema.Types.ObjectId, ref: 'User' },
+  _user: { type: Schema.Types.ObjectId, ref: 'user' },
   dateCreated: Date
 });
 
