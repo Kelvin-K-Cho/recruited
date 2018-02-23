@@ -8,6 +8,7 @@ import Landing from './landing/landing.jsx';
 import '../styles/reset.css';
 import '../styles/main.css';
 import '../styles/resumes.css';
+import '../styles/profile.css';
 import Header from "./header.jsx";
 // import Landing from './Landing';
 import Dashboard from "./jobs/job_listing/Dashboard";

@@ -31,7 +31,7 @@ class Header extends React.Component {
           <span className="span-logged-in">
             <a className="button-logged-in-google-real" href="/api/logout">Logout</a>
           </span>
-          <Link to={`/users/${this.props.auth._id}`} >User Profile</Link>
+          <Link className="link-to-user-profile" to={`/users/${this.props.auth._id}`} >Profile</Link>
         </div>
       );
     }

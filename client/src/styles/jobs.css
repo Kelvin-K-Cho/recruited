@@ -529,3 +529,7 @@
   color: #5959f9;
   text-decoration: none;
 }
+
+.resume-list-button:hover {
+  background: lightgray;
+}
