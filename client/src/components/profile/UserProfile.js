@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchMyJobs } from '../../actions/index';
 import _ from 'lodash';
+import { Link } from 'react-router-dom';
+import Pacman from '../loader.jsx';
 
 class UserProfile extends React.Component {
   
@@ -17,7 +19,7 @@ class UserProfile extends React.Component {
     if (_.isEmpty(this.props.createdJobProfile) && _.isEmpty(this.props.appliedJobProfile)) {
       return (
         <div className="finding-profile-spinner">
-          Finding My Profile
+          <Pacman />
         </div>
       );
     } else {
@@ -30,18 +32,20 @@ class UserProfile extends React.Component {
                 <div className="profile-inner-container">
                   <div className="my-created-jobs-container">
                     <div className="my-created-jobs" key={job._id}>
-                      <div className="my-created-jobs-title">
-                        {job.title}
-                      </div>
-                      <div className="my-created-jobs-type">
-                        Type: {job.type}
-                      </div>
-                      <div className="my-created-jobs-company">
-                        Company: {job.company}
-                      </div>
-                      <div className="my-created-jobs-location">
-                        Location: {job.location}
-                      </div>
+                      <Link className="link-back-to-show-page" to={`/jobs/${job._id}`} >
+                        <div className="my-created-jobs-title">
+                          {job.title}
+                        </div>
+                        <div className="my-created-jobs-type">
+                          Type: {job.type}
+                        </div>
+                        <div className="my-created-jobs-company">
+                          Company: {job.company}
+                        </div>
+                        <div className="my-created-jobs-location">
+                          Location: {job.location}
+                        </div>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -56,18 +60,20 @@ class UserProfile extends React.Component {
                 <div className="profile-inner-container">
                   <div className="my-applied-job-container">
                     <div className="my-applied-jobs" key={appliedJob._id}>
-                      <div className="my-applied-jobs-title">
-                        {appliedJob.title}
-                      </div>
-                      <div className="my-applied-job-type">
-                        Type: {appliedJob.type}
-                      </div>
-                      <div className="my-applied-job-company">
-                        Company: {appliedJob.company}
-                      </div>
-                      <div className="my-applied-jobs-location">
-                        Location: {appliedJob.location}
-                      </div>
+                      <Link className="link-back-to-show-page" to={`/jobs/${appliedJob._id}`} >
+                        <div className="my-applied-jobs-title">
+                          {appliedJob.title}
+                        </div>
+                        <div className="my-applied-job-type">
+                          Type: {appliedJob.type}
+                        </div>
+                        <div className="my-applied-job-company">
+                          Company: {appliedJob.company}
+                        </div>
+                        <div className="my-applied-jobs-location">
+                          Location: {appliedJob.location}
+                        </div>
+                      </Link>
                     </div>
                   </div>
                 </div>
