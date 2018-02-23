@@ -28,7 +28,17 @@ module.exports = app => {
   app.get('/api/jobs/:id', requireLogin, (req, res) => {
     Job.find({_id: req.params.id})
       .then((jobs) => {
+        // console.log(req.user._id);
         res.send(jobs[0]);  // it returns as array so we have to get index 0
+      });
+  });
+
+  //Double check with BW
+  app.delete('/api/jobs/:id', requireLogin, (req, res) => {
+    Job.findOne({_id: req.params.id, _user: req.user._id})
+      .then((job) => {
+        job.remove({_id: req.params.id});
+        res.redirect('/jobs');
       });
   });
 

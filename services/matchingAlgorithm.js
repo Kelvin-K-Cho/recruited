@@ -16,7 +16,7 @@ const cleanString = (string) => {
 
 
 const getJobKeywords = (stringToken) => {
-  // from job title tokens, we need to look for similar keys in the keywordBank
+  // from job tite tokens, we need to look for similar keys in the keywordBank
   const allKeys = Object.keys(keywordBank);
   for (let i = 0; i < allKeys.length; i++) {
     if (allKeys[i].includes(stringToken)) { // if the strinToken appears in a list of keywords
@@ -47,7 +47,6 @@ const getThisJobKeywords = (job) => {
 module.exports = (job, resumes) => {
   // call the function to gather all the keywords related to this job title:
   let thisJobKeywords = getThisJobKeywords(job);
-  console.log(thisJobKeywords);
   // that the recruiters are looking for:
   let dupResumes = _.merge([], resumes); // dup, so we can modify
   dupResumes.forEach((resume, idx) => {

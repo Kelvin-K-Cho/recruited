@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchResumes } from '../../actions';
+import { fetchResumes, updateResume } from '../../actions';
 
 import {Link} from 'react-router-dom';
 
@@ -19,7 +19,8 @@ class ResumeList extends React.Component {
     if (resume) {
       const percentMatch = resume.percentMatch.toFixed(2) * 100;
       document.getElementById('resume-view')
-        .innerHTML = `<div>Percentage Match: ${percentMatch}%</div>` + this.props.resumes[this.state.resumeIndex].resumeHTML;
+        .innerHTML = `<div class="percent-match">Percentage Match: ${percentMatch}%</div>` +
+          this.props.resumes[this.state.resumeIndex].resumeHTML;
     } else {
       document.getElementById('resume-view')
         .innerHTML = "<div>There is no resume to show</div>";
@@ -27,15 +28,15 @@ class ResumeList extends React.Component {
   }
 
   handleButton(e) {
-    if (e.text === "Approve") {
+    if (e.target.className === "resume-approve") {
       // save to list of approved resumes:
+      this.props.updateResume(this.props.resumes[this.state.resumeIndex]._id, {approved: true});
     }
     // next:
     this.setState({resumeIndex: this.state.resumeIndex + 1});
   }
 
   render() {
-    console.log(this.state.resume);
     const {resumes} = this.props;
     // if (!resumes[this.state.resumeIndex]) return (<div>Loading</div>);
     return (
@@ -62,8 +63,9 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    fetchResumes: (jobId) => fetchResumes(jobId)
+    fetchResumes: (jobId) => dispatch(fetchResumes(jobId)),
+    updateResume: (resumeId, values) => dispatch(updateResume(resumeId, values))
   };
 }
 
-export default connect(mapStateToProps, { fetchResumes })(ResumeList);
+export default connect(mapStateToProps, mapDispatchToProps)(ResumeList);

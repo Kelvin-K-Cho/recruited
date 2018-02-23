@@ -3,7 +3,8 @@ import { FETCH_USER,
   FETCH_JOBS,
   FETCH_JOB,
   FETCH_RESUMES,
-  FETCH_MY_CREATED_JOBS
+  FETCH_MY_CREATED_JOBS,
+  REMOVE_JOB
 } from "./types";
 
 // export const changeLogin = shouldBeLoggedIn => {
@@ -53,18 +54,23 @@ export const fetchResumes = (jobId) => dispatch => {
 };
 
 export const submitResume = (values) => dispatch => {
-  axios.post('/api/resumes', values)
-    .then(res => console.log(res));
+  axios.post('/api/resumes', values);
+};
+
+export const updateResume = (id, values) => dispatch => {
+  axios.patch(`/api/resumes/${id}`, values);  // PLEASE DONT USE PUT!!
 };
 
 export const fetchMyJobs = (userId) => dispatch => {
   axios.get(`/api/users/${userId}`)
-    .then(res =>
-        console.log(res.data)
-    );
+    .then(res => dispatch({
+      type: FETCH_MY_CREATED_JOBS,
+      payload: res.data
+    }));
 };
 
-
-// dispatch({
-//   type: FETCH_MY_CREATED_JOBS,
-//   payload: res.data
+export const removeJob = (jobId) => dispatch => (
+  axios.delete(`/api/jobs/${jobId}`)
+    .then(res => dispatch({ type: REMOVE_JOB, payload: res.data }))
+    // .then(history.push('/jobs'))
+);

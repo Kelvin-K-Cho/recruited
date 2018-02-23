@@ -30,6 +30,7 @@ module.exports = app => {
     const resume = new Resume({
       resumeText,
       resumeHTML,
+      approved: false,
       _job,
       _user: req.user.id,
       dateCreated: Date.now()
@@ -41,5 +42,19 @@ module.exports = app => {
       res.send(user.resume); // send resume information for review
     });
 
+  });
+
+  app.patch(`/api/resumes/:id`, requireLogin, (req, res) => {
+    console.log(req.body);
+    Resume.find({_id: req.params.id})
+      .then((resumes) => {
+        console.log("FOunded");
+        resumes[0].set(req.body); //update values from request body data
+        resumes[0].save((err) => {
+          if (err) return res.send(err);
+        }).then(() => {
+          res.send("save succesful");
+        });
+      });
   });
 };
