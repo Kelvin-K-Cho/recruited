@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchResumes, updateResume } from '../../actions';
 
-//Deprecated import.
+//Deprecated import
 // import {Link} from 'react-router-dom';
 
 class ResumeList extends React.Component {
