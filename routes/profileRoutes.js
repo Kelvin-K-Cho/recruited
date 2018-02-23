@@ -7,7 +7,7 @@ const Resumes = mongoose.model("resumes");
 module.exports = app => {
   app.get('/api/users/:id', requireLogin, (req, res) => {
     let appliedJobs = [];
-    let createdJobs;
+    let createdJobs = [];
     Jobs.find({_user: req.params.id})
     .then((jobs) => {
       // console.log(jobs);
