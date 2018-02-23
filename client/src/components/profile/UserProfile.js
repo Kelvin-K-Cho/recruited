@@ -14,10 +14,10 @@ class UserProfile extends React.Component {
   }
   
   render() {
-    if (_.isEmpty(this.props.createdJobProfile) || _.isEmpty(this.props.appliedJobProfile)) {
+    if (_.isEmpty(this.props.createdJobProfile) && _.isEmpty(this.props.appliedJobProfile)) {
       return (
-        <div>
-          Finding My Profile 
+        <div className="finding-profile-spinner">
+          Finding My Profile
         </div>
       );
     } else {
