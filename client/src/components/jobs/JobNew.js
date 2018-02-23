@@ -5,7 +5,12 @@ import JobFormReview from './JobFormReview';
 
 class JobNew extends React.Component {
 
-  state = { showFormReview: false };
+  constructor(props) {
+    super(props);
+    this.state = {showFormReview: false};
+  }
+
+  // state = { showFormReview: false };
 
   renderContent(){
     if (this.state.showFormReview) {
@@ -13,13 +18,13 @@ class JobNew extends React.Component {
         <JobFormReview
           onCancel={() => this.setState({ showFormReview: false })}
         />
-      )
+      );
     }
     return (
       <JobForm
       onJobSubmit={() => this.setState({ showFormReview: true })}
       />
-    )
+    );
   }
 
   render() {
