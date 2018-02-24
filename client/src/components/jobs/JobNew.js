@@ -28,7 +28,7 @@ class JobNew extends React.Component {
   }
 
   render() {
-    console.log('rendering form');
+    // console.log('rendering form');
     return (
       <div className="job-form-outer-div">
         <div className="job-form-container-div">
