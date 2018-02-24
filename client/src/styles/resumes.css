@@ -1,3 +1,10 @@
+.resume-page-container {
+  margin: 0 auto;
+  min-width: 1400px;
+  max-width: 90%;
+  position: relative;
+}
+
 .resumelist-component {
   display: flex;
 }
@@ -7,7 +14,8 @@
   font-size: 100%;
   width: 700px;
   max-height: 650px;
-  margin: 10px 0 0 290px;
+  margin: 0 auto;
+  margin-top: 10px;
   padding: 20px 40px;
   overflow: scroll;
   border-radius: 7px;
@@ -25,7 +33,8 @@
   color: red;
   width: 700px;
   padding: 20px 0;
-  margin: 40px 0 0 290px;
+  margin: 0 auto;
+  margin-top: 40px;
   border: 1px solid #aee0bc;
   border-radius: 10px;
   text-align: center;
@@ -35,21 +44,22 @@
 
 .approved-resume-container {
   background: white;
-  position: fixed;
-  left: 1100px;
-  top: 260px;
+  position: absolute;
+  right: 0.5%;
+  top: 82px;
   border: 1px solid black;
   padding: 20px 20px 40px 20px;
   max-height: 650px;
   overflow: visible;
   transition: height 0.5s ease-in-out;
+  min-width: 250px;
 }
 
-.approved-resume-title, .rejected-resume-title {
+.approved-resume-title, .stat-container-title {
   color: red;
   padding: 10px 0;
   border-bottom: 1px solid black;
-  font-size: 150%;
+  font-size: 120%;
 }
 
 .approved-list {
@@ -66,13 +76,44 @@
   margin: 5px;
   border-radius: 4px;
   border: 1px solid #aee0bc;
+  /* max-width: 200px; */
+  overflow: hidden;
 }
 
-.stats-resume-container {
+.stats-container {
   background: white;
-  position: fixed;
-  left: 10px;
-  top: 260px;
+  position: absolute;
+  left: 0.5%;
+  top: 82px;
   border: 1px solid black;
   padding: 20px 20px 40px 20px;
+  width: 250px;
+}
+
+.stats-title {
+  color: black;
+  font-size: 130%;
+  background: #eaf5e8;
+  border: 1px solid #aee0bc;
+  margin: 10px 0 0 0;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+#stats-title-first {
+  margin-top: 20px;
+}
+
+.stats-title>span {
+  float: right;
+  padding-left: 10px;
+  color: blue;
+  font-size: 100%;
+}
+
+.button-container {
+  margin: 0 auto;
+  width: 400px;
+  display: flex;
+  justify-content: center;
 }

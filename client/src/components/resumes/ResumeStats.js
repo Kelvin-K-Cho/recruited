@@ -31,9 +31,17 @@ class ResumeStats extends React.Component {
           <div className="approved-resume-title">Approved Applicants:</div>
           {this.renderApprove()}
         </div>
-        <div className="stats-resume-container">
-          <div className="rejected-resume-title">Rejected:</div>
-          {this.props.rejectedNumber}
+        <div className="stats-container">
+          <div className="stat-container-title">Stats:</div>
+          <div id="stats-title-first" className="stats-title">Pending:
+            <span>{this.props.pendingNumber}</span>
+          </div>
+          <div className="stats-title">Approved:
+            <span>{this.props.approvedResumes.length}</span>
+          </div>
+          <div className="stats-title">Rejected:
+            <span>{this.props.rejectedNumber}</span>
+          </div>
         </div>
       </div>
     );

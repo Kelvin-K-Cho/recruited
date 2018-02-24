@@ -9,7 +9,6 @@ class ResumeList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {resumeIndex: 0};
-    this.approvedNumber = 0;
   }
 
   componentDidMount() {
@@ -34,7 +33,7 @@ class ResumeList extends React.Component {
   renderButtons() {
     if (!this.props.resumes[this.state.resumeIndex]) return null;
     return (
-      <div>
+      <div className="button-container">
         <button className="resume-approve"
           onClick={(e) => this.handleButton(e)}>
           Approve
@@ -55,7 +54,7 @@ class ResumeList extends React.Component {
       this.props.updateResume(this.props.resumes[this.state.resumeIndex]._id, {approved: "no"});
     }
     // next:
-    this.setState({resumeIndex: this.state.resumeIndex + 1});
+    // this.setState({resumeIndex: this.state.resumeIndex + 1});
   }
 
   render() {

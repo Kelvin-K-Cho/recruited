@@ -32,8 +32,10 @@ class App extends React.Component {
             <Route exact path="/" component={Landing}/>
             <Route exact path="/jobs" component={Dashboard}/>
             <Route exact path="/jobs/:id" component={JobShow}/>
-            <Route path="/jobs/:id/resumes" component={ResumeList}/>
-            <Route path="/jobs/:id/resumes" component={ResumeStats}/>
+            <div className="resume-page-container">
+              <Route path="/jobs/:id/resumes" component={ResumeList}/>
+              <Route path="/jobs/:id/resumes" component={ResumeStats}/>
+            </div>
             <Route exact path="/jobs/new" component={JobNew}/>
             <Route exact path="/users/:id" component={UserProfile} />
           </div>
