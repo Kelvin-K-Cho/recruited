@@ -30,11 +30,11 @@ class App extends React.Component {
           <div className="inner-container-div">
             <Header />
             <AuthRoute exact path="/" component={Landing}/>
-            <Route exact path="/jobs" component={Dashboard}/>
-            <Route exact path="/jobs/:id" component={JobShow}/>
-            <Route path="/jobs/:id/resumes" component={ResumeList}/>
-            <Route exact path="/jobs/new" component={JobNew}/>
-            <Route exact path="/users/:id" component={UserProfile} />
+            <ProtectedRoute exact path="/jobs" component={Dashboard}/>
+            <ProtectedRoute exact path="/jobs/:id" component={JobShow}/>
+            <ProtectedRoute path="/jobs/:id/resumes" component={ResumeList}/>
+            <ProtectedRoute exact path="/jobs/new" component={JobNew}/>
+            <ProtectedRoute exact path="/users/:id" component={UserProfile} />
           </div>
         </BrowserRouter>
       </div>
