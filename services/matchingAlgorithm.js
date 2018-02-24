@@ -47,8 +47,15 @@ const getThisJobKeywords = (job) => {
 module.exports = (job, resumes) => {
   // call the function to gather all the keywords related to this job title:
   let thisJobKeywords = getThisJobKeywords(job);
-  // that the recruiters are looking for:
   let dupResumes = _.merge([], resumes); // dup, so we can modify
+
+  if (thisJobKeywords.length < 1) { // handle if no keywords, return all 0 percentMatch
+    dupResumes.forEach((resume, idx) => {
+      dupResumes[idx].percentMatch = 0;
+    });
+    return dupResumes;
+  }
+  // that the recruiters are looking for:
   dupResumes.forEach((resume, idx) => {
     let matchCount = 0;
     thisJobKeywords.forEach((keyword) => {
