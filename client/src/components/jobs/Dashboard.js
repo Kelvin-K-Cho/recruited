@@ -12,20 +12,20 @@ import _ from 'lodash';
 
 
 class Dashboard extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
   componentDidMount() {
     this.props.fetchJobs();
   }
-  
+
   render() {
     if (_.isEmpty(this.props.jobs)) {
       return (
         <Bar />
-      )
-    } 
+      );
+    }
     return (
       <div className="logged-in-main-div">
         <p className="button-to-create-job">
@@ -44,12 +44,12 @@ class Dashboard extends React.Component {
       </div>
     );
   }
-};
+}
 
 function mapStateToProps(state, ownProps){
   return {
     jobs: state.entities.jobs
-  }
+  };
 }
 
 export default connect(mapStateToProps, { fetchJobs })(Dashboard);
