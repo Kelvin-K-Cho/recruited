@@ -51,7 +51,7 @@ export const submitResume = (values) => dispatch => {
 };
 
 export const updateResume = (id, values) => dispatch => {
-  console.log("calling update");
+  // console.log("calling update");
   axios.patch(`/api/resumes/${id}`, values) // PLEASE DONT USE PUT!!
     .then((res) => dispatch({
       type: UPDATE_RESUME,
