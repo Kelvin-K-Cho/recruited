@@ -51,7 +51,7 @@
   padding: 20px 20px 40px 20px;
   max-height: 650px;
   overflow: visible;
-  transition: height 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
   min-width: 250px;
 }
 
@@ -76,8 +76,14 @@
   margin: 5px;
   border-radius: 4px;
   border: 1px solid #aee0bc;
-  /* max-width: 200px; */
+  cursor: pointer;
   overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.approved-item:hover {
+  background: white;
+  border: 1px solid #05a632;
 }
 
 .stats-container {
