@@ -13,7 +13,7 @@
   background: #ebebeb;
   font-size: 100%;
   width: 700px;
-  max-height: 650px;
+  max-height: 600px;
   margin: 0 auto;
   margin-top: 10px;
   padding: 20px 40px;
@@ -21,12 +21,42 @@
   border-radius: 7px;
 }
 
-.resume-approve, .resume-decline {
+.button-container {
+  margin: 0 auto;
+  margin-top: 20px;
+  width: 400px;
+  display: flex;
+  justify-content: center;
+}
+
+.resume-approve {
   background: white;
   padding: 10px 20px;
   border-radius: 4px;
   border: 1px solid black;
   margin: 0 auto;
+  color: #5757ce;
+  transition: all 0.3s ease-in-out;
+}
+
+.resume-decline {
+  background: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  border: 1px solid black;
+  margin: 0 auto;
+  color: #ff6565;
+  transition: all 0.3s ease-in-out;
+}
+
+.resume-decline:hover {
+  background: #ff6565;
+  color: white;
+}
+
+.resume-approve:hover {
+  background: #5757ce;
+  color: white;
 }
 
 .percent-match {
@@ -115,11 +145,4 @@
   padding-left: 10px;
   color: blue;
   font-size: 100%;
-}
-
-.button-container {
-  margin: 0 auto;
-  width: 400px;
-  display: flex;
-  justify-content: center;
 }
