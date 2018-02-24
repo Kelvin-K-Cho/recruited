@@ -12,7 +12,8 @@ module.exports = app => {
     .then((jobs) => {
       // console.log(jobs);
       createdJobs = jobs;
-    });
+    })
+    .then( () => {
 
     Resumes.find({_user: req.params.id})
       .then((resumes) => {
@@ -29,7 +30,7 @@ module.exports = app => {
             }
           });
         });
-      });
+      });});
 
       });
 

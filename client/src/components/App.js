@@ -14,7 +14,6 @@ import Dashboard from "./jobs/Dashboard";
 import JobNew from './jobs/JobNew';
 import JobShow from './jobs/JobShow';
 import ResumeList from './resumes/ResumeList';
-import ApprovedList from './resumes/ApprovedList';
 import UserProfile from './profile/UserProfile';
 
 class App extends React.Component {
@@ -33,7 +32,6 @@ class App extends React.Component {
             <Route exact path="/jobs" component={Dashboard}/>
             <Route exact path="/jobs/:id" component={JobShow}/>
             <Route path="/jobs/:id/resumes" component={ResumeList}/>
-            <Route path="/jobs/:id/resumes" component={ApprovedList}/>
             <Route exact path="/jobs/new" component={JobNew}/>
             <Route exact path="/users/:id" component={UserProfile} />
           </div>

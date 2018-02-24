@@ -1,3 +1,10 @@
+.resume-page-container {
+  margin: 0 auto;
+  min-width: 1400px;
+  max-width: 90%;
+  position: relative;
+}
+
 .resumelist-component {
   display: flex;
 }
@@ -6,26 +13,58 @@
   background: #ebebeb;
   font-size: 100%;
   width: 700px;
-  max-height: 650px;
-  margin: 10px 0 0 200px;
+  max-height: 600px;
+  margin: 0 auto;
+  margin-top: 10px;
   padding: 20px 40px;
   overflow: scroll;
   border-radius: 7px;
 }
 
-.resume-approve, .resume-decline {
+.button-container {
+  margin: 0 auto;
+  margin-top: 20px;
+  width: 400px;
+  display: flex;
+  justify-content: center;
+}
+
+.resume-approve {
   background: white;
   padding: 10px 20px;
   border-radius: 4px;
   border: 1px solid black;
   margin: 0 auto;
+  color: #5757ce;
+  transition: all 0.3s ease-in-out;
+}
+
+.resume-decline {
+  background: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  border: 1px solid black;
+  margin: 0 auto;
+  color: #ff6565;
+  transition: all 0.3s ease-in-out;
+}
+
+.resume-decline:hover {
+  background: #ff6565;
+  color: white;
+}
+
+.resume-approve:hover {
+  background: #5757ce;
+  color: white;
 }
 
 .percent-match {
   color: red;
   width: 700px;
   padding: 20px 0;
-  margin: 40px 0 0 200px;
+  margin: 0 auto;
+  margin-top: 40px;
   border: 1px solid #aee0bc;
   border-radius: 10px;
   text-align: center;
@@ -35,15 +74,30 @@
 
 .approved-resume-container {
   background: white;
-  position: fixed;
-  left: 1100px;
-  top: 260px;
+  position: absolute;
+  right: 0.5%;
+  top: 82px;
   border: 1px solid black;
-  padding: 40px 10px;
+  padding: 20px 20px 40px 20px;
+  max-height: 650px;
+  overflow: visible;
+  transition: all 0.5s ease-in-out;
+  min-width: 250px;
+}
+
+.approved-resume-title, .stat-container-title {
+  color: red;
+  padding: 10px 0;
+  border-bottom: 1px solid black;
+  font-size: 120%;
 }
 
 .approved-list {
   list-style: none;
+}
+
+.approved-list>li:first-child {
+  margin-top: 20px;
 }
 
 .approved-item {
@@ -52,4 +106,43 @@
   margin: 5px;
   border-radius: 4px;
   border: 1px solid #aee0bc;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.approved-item:hover {
+  background: white;
+  border: 1px solid #05a632;
+}
+
+.stats-container {
+  background: white;
+  position: absolute;
+  left: 0.5%;
+  top: 82px;
+  border: 1px solid black;
+  padding: 20px 20px 40px 20px;
+  width: 250px;
+}
+
+.stats-title {
+  color: black;
+  font-size: 130%;
+  background: #eaf5e8;
+  border: 1px solid #aee0bc;
+  margin: 10px 0 0 0;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+#stats-title-first {
+  margin-top: 20px;
+}
+
+.stats-title>span {
+  float: right;
+  padding-left: 10px;
+  color: blue;
+  font-size: 100%;
 }
