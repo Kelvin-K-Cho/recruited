@@ -6,7 +6,7 @@ export default function (state = {}, action) {
     case FETCH_RESUMES:
       return action.payload;
     case UPDATE_RESUME:
-    console.log("reducer");
+    // console.log("reducer");
       let newState = Object.assign({}, state);
       newState[action.payload._id] = action.payload;
       return newState;

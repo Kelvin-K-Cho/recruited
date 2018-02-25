@@ -58,10 +58,10 @@ module.exports = app => {
     Resume.find({_id: req.params.id})
       .populate("_user")  // populate to nest the user info
       .then((resumes) => {
-        console.log("FOunded");
+        // console.log("FOunded");
         resumes[0].set(req.body); //update values from request body data
         resumes[0].save((err, updatedResume) => {
-          console.log("sending");
+          // console.log("sending");
           res.send(updatedResume);
         });
       });
