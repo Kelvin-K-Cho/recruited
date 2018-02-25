@@ -9,9 +9,9 @@ The allocation of highly talented workers and limited employment opportunities i
 ## Functionality & MVP
   - [x] User authentication using Node/Express as the backend framework. (1 Day)
   - [x] Ability for job seekers to upload resumes and store onto MongoDB. (1 Day)
-  - [ ] Basic CRUD functionality on both job seeker and recruiter side. (1 Day)
+  - [x] Basic CRUD functionality on both job seeker and recruiter side. (1 Day)
   - [x] Parse submitted resumes to match job posting requirements. (1 Day)
-  - [ ] Allow recruiters/seekers to accept or reject resumes based on match criteria. (1 Day)
+  - [x] Allow recruiters/seekers to accept or reject resumes based on match criteria. (1 Day)
 
 
 #### Bonus Features

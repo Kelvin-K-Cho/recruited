@@ -48,7 +48,7 @@ class JobShow extends React.Component {
   }
 
   submitFile() {
-    console.log("submitting");
+    // console.log("submitting");
     this.props.submitResume({
       resumeText: this.resumeText,
       resumeHTML: this.resumeHTML,
@@ -106,7 +106,7 @@ class JobShow extends React.Component {
 
   render() {
     if (!this.props.job) return (<div></div>);
-    console.log(this.props.job._user);
+    // console.log(this.props.job._user);
     if (this.props.authId && this.props.job._user === this.props.authId) {
       return (
         <div className="job-show-page-outer-div">

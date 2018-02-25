@@ -14,7 +14,7 @@ class ResumeList extends React.Component {
   componentDidMount() {
     this.props.fetchResumes(this.props.match.params.id);
   }
-  
+
   displayResume() {
     let resume, percentMatch, resumeHTML;
     switch(this.state.displayType) {
@@ -25,17 +25,17 @@ class ResumeList extends React.Component {
           resumeHTML = resume.resumeHTML;
         }
         break;
-      case 1: 
+      case 1:
         resume = this.state.chosen;
         percentMatch = parseFloat(resume.dataset.percentmatch);
         resumeHTML = resume.dataset.html;
         break;
-      default: 
+      default:
         resume = this.displayPending();
         break;
     }
-    console.log("rendering resume");
-    console.log(percentMatch);
+    // console.log("rendering resume");
+    // console.log(percentMatch);
     if (!resume) return (
       <div className="resume-container">
         <div id="resume-view">
@@ -98,7 +98,7 @@ class ResumeList extends React.Component {
       </ul>
     );
   }
-  
+
   switchDisplayTypeOne(e) {
     console.log("switching");
     this.setState({displayType: 1, chosen: e.currentTarget});
@@ -109,7 +109,7 @@ class ResumeList extends React.Component {
     return (
       <div className="resume-page-container">
         {this.displayResume()}
-        
+
         {this.renderButtons()}
 
         <div className="approved-resume-container">

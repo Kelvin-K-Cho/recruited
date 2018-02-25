@@ -25,7 +25,7 @@ module.exports = app => {
           .then(job => {
             appliedJobs.push(job[0]);
             if (idx === resumes.length-1) {
-              console.log(appliedJobs);
+              // console.log(appliedJobs);
               res.send({appliedJobs, createdJobs});
             }
           });
