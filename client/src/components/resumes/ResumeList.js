@@ -8,30 +8,57 @@ import { fetchResumes, updateResume } from '../../actions';
 class ResumeList extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {resumeIndex: 0};
+    this.state = {displayType: 0, chosen: undefined}; // 0 for "pending", 1 for "approved"
   }
 
   componentDidMount() {
     this.props.fetchResumes(this.props.match.params.id);
   }
-
-  componentDidUpdate() {  // render resume after element loaded and updated with state data
-    const resume = this.props.resumes[this.state.resumeIndex];
-    if (resume) {
-      const percentMatch = resume.percentMatch.toFixed(2) * 100;
-      document.getElementById('percent-match').innerHTML =
-        `<div class="percent-match">Percentage Match: ${percentMatch}%</div>`;
-      document.getElementById('resume-view')
-        .innerHTML = this.props.resumes[this.state.resumeIndex].resumeHTML;
-    } else {
-      document.getElementById('percent-match').innerHTML = "";
-      document.getElementById('resume-view')
-        .innerHTML = "<div>There is no resume to show</div>";
+  
+  displayResume() {
+    let resume, percentMatch, resumeHTML;
+    switch(this.state.displayType) {
+      case 0:
+        resume = this.props.resumes[0];
+        if (resume) {
+          percentMatch = resume.percentMatch;
+          resumeHTML = resume.resumeHTML;
+        }
+        break;
+      case 1: 
+        resume = this.state.chosen;
+        percentMatch = parseFloat(resume.dataset.percentmatch);
+        resumeHTML = resume.dataset.html;
+        break;
+      default: 
+        resume = this.displayPending();
+        break;
     }
+    console.log("rendering resume");
+    console.log(percentMatch);
+    if (!resume) return (
+      <div className="resume-container">
+        <div id="resume-view">
+          There is no resume to show
+        </div>
+      </div>
+    )
+    return (
+      <div>
+        <div id="percent-match" className="percent-match">
+          Percentage Match: {percentMatch.toFixed(2) * 100}%
+        </div>
+        <div className="resume-container">
+          <div id="resume-view"
+            dangerouslySetInnerHTML={{__html: resumeHTML}}>
+          </div>
+        </div>
+      </div>
+    )
   }
 
   renderButtons() {
-    if (!this.props.resumes[this.state.resumeIndex]) return null;
+    if (this.props.resumes.length < 1 || this.state.displayType !== 0) return null;
     return (
       <div className="button-container">
         <button className="resume-approve"
@@ -49,9 +76,9 @@ class ResumeList extends React.Component {
   handleButton(e) {
     if (e.target.className === "resume-approve") {
       // save to list of approved resumes:
-      this.props.updateResume(this.props.resumes[this.state.resumeIndex]._id, {approved: "yes"});
+      this.props.updateResume(this.props.resumes[0]._id, {approved: "yes"});
     } else {
-      this.props.updateResume(this.props.resumes[this.state.resumeIndex]._id, {approved: "no"});
+      this.props.updateResume(this.props.resumes[0]._id, {approved: "no"});
     }
   }
 
@@ -59,9 +86,11 @@ class ResumeList extends React.Component {
     const {approvedResumes} = this.props;
     return (
       <ul className="approved-list">
-        {approvedResumes.reverse().map(resume => (
+        {approvedResumes.map(resume => (
           <li key={resume._id} className="approved-item"
-            onClick={() => this.displayChosen(resume)}>
+            data-percentmatch={resume.percentMatch}
+            data-html={resume.resumeHTML}
+            onClick={(e) => this.switchDisplayTypeOne(e)}>
             <div>{resume._user.fullName}</div>
             <div>{resume._user.email}</div>
           </li>
@@ -69,23 +98,18 @@ class ResumeList extends React.Component {
       </ul>
     );
   }
-
-  displayChosen(resume) {
-    const percentMatch = resume.percentMatch.toFixed(2) * 100;
-    document.getElementById('percent-match').innerHTML =
-      `<div class="percent-match">Percentage Match: ${percentMatch}%</div>`;
-    document.getElementById('resume-view')
-      .innerHTML = resume.resumeHTML;
+  
+  switchDisplayTypeOne(e) {
+    console.log("switching");
+    this.setState({displayType: 1, chosen: e.currentTarget});
   }
 
   render() {
     // console.log(this.props);
     return (
       <div className="resume-page-container">
-        <div id="percent-match"></div>
-        <div className="resume-container">
-          <div id="resume-view"></div>
-        </div>
+        {this.displayResume()}
+        
         {this.renderButtons()}
 
         <div className="approved-resume-container">
@@ -95,7 +119,8 @@ class ResumeList extends React.Component {
 
         <div className="stats-container">
           <div className="stat-container-title">Stats:</div>
-          <div id="stats-title-first" className="stats-title">Pending:
+          <div id="stats-title-first" className="stats-title"
+            onClick={() => this.setState({displayType: 0})}>Pending:
             <span>{this.props.pendingNumber}</span>
           </div>
           <div className="stats-title">Approved:
