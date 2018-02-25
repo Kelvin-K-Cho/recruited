@@ -15,6 +15,7 @@ import JobNew from './jobs/JobNew';
 import JobShow from './jobs/JobShow';
 import ResumeList from './resumes/ResumeList';
 import UserProfile from './profile/UserProfile';
+import { AuthRoute, ProtectedRoute } from '../util/route_util.jsx';
 
 class App extends React.Component {
 
@@ -28,7 +29,7 @@ class App extends React.Component {
         <BrowserRouter>
           <div className="inner-container-div">
             <Header />
-            <Route exact path="/" component={Landing}/>
+            <AuthRoute exact path="/" component={Landing}/>
             <Route exact path="/jobs" component={Dashboard}/>
             <Route exact path="/jobs/:id" component={JobShow}/>
             <Route path="/jobs/:id/resumes" component={ResumeList}/>

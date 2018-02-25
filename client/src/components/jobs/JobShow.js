@@ -126,7 +126,7 @@ function mapStateToProps(state, ownProps) {
 }
 
 function mapDispatchToProps(dispatch, ownProps) {
-  console.log(ownProps.match.params.id);
+  // console.log(ownProps.match.params.id);
   return {
     fetchJob: (id) => dispatch(fetchJob(id)),
     submitResume: (values) => dispatch(submitResume(values))
