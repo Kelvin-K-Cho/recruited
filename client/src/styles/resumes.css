@@ -138,6 +138,13 @@
 
 #stats-title-first {
   margin-top: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+#stats-title-first:hover {
+  background: white;
+  border: 1px solid #05a632;
 }
 
 .stats-title>span {
