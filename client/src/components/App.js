@@ -32,8 +32,8 @@ class App extends React.Component {
             <Switch>
               <AuthRoute exact path="/" component={Landing}/>
               <ProtectedRoute exact path="/jobs" component={Dashboard}/>
-              <ProtectedRoute exact path="/jobs/:id" component={JobShow}/>
               <ProtectedRoute exact path="/jobs/new" component={JobNew}/>
+              <ProtectedRoute exact path="/jobs/:id" component={JobShow}/>
               <ProtectedRoute exact path="/users/:id" component={UserProfile} />
               <ProtectedRoute path="/jobs/:id/resumes" component={ResumeList}/>
               <Redirect to="/" />
