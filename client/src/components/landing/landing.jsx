@@ -43,6 +43,10 @@ class Landing extends React.Component {
             Join The Work Force Today!
           </p>
           <button className="button-to-sign-up">{this.renderContent()}</button>
+          <div
+          className="div-to-demo">
+          <button className="button-to-demo">Demo Login</button>
+          </div>
         </div>
       </div>
     );
