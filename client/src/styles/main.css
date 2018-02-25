@@ -125,10 +125,19 @@
   text-decoration: none;
 }
 
+.button-to-demo:hover {
+  background:lightgray;
+  cursor: pointer;
+}
+
 .button-login-google-real:visited {
   text-decoration: none;
 }
 
 .button-login-google-real:hover {
   background: lightgray;
+}
+
+.empty {
+  padding-top: 15px;
 }
