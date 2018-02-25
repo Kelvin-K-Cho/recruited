@@ -18,8 +18,10 @@ class UserProfile extends React.Component {
   render() {
     if (_.isEmpty(this.props.createdJobProfile) && _.isEmpty(this.props.appliedJobProfile)) {
       return (
-        <div className="finding-profile-spinner">
-          <Pacman />
+        <div className="profile-outer-container">
+          <div className="created-jobs-div">
+            <h1 className="empty">No Jobs Found</h1>
+          </div>
         </div>
       );
     } else {
