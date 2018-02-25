@@ -30,6 +30,7 @@ class App extends React.Component {
           <div className="inner-container-div">
             <Header />
             <Switch>
+              <Route path="/api"/>
               <AuthRoute exact path="/" component={Landing}/>
               <ProtectedRoute exact path="/jobs" component={Dashboard}/>
               <ProtectedRoute exact path="/jobs/new" component={JobNew}/>
