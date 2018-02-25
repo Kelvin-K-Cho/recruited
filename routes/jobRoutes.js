@@ -74,7 +74,8 @@ module.exports = app => {
     });
 
     job.save().then(
-      res.send(user.job) // send job information for review
+      // res.send(user.job) // send job information for review
+      res.redirect('/jobs')
     );
 
   });
