@@ -106,23 +106,37 @@ class JobShow extends React.Component {
 
   render() {
     if (!this.props.job) return (<div></div>);
-    return (
-      <div className="job-show-page-outer-div">
-        <button className="resume-button" onClick={()=> this.setState({openResume: true})}>
-          Upload Resume And Apply
-        </button>
+    console.log(this.props.job._user);
+    if (this.props.authId && this.props.job._user === this.props.authId) {
+      return (
+        <div className="job-show-page-outer-div">
         <button className="resume-list-button">
-          <Link to={`/jobs/${this.props.match.params.id}/resumes`}>See Resumes</Link>
+        <Link to={`/jobs/${this.props.match.params.id}/resumes`}>See Resumes</Link>
         </button>
         <div>{this.renderResumeModal()}</div>
         {this.renderJob()}
-      </div>
-    );
+        </div>
+      );
+    } else {
+      return (
+        <div className="job-show-page-outer-div">
+        <button className="resume-button" onClick={()=> this.setState({openResume: true})}>
+        Upload Resume And Apply
+        </button>
+        <div>{this.renderResumeModal()}</div>
+        {this.renderJob()}
+        </div>
+      );
+    }
   }
 }
 
 function mapStateToProps(state, ownProps) {
-  return { job: state.entities.jobs[ownProps.match.params.id] };
+  if (state.auth === null) {
+    return { job: state.entities.jobs[ownProps.match.params.id] }
+  } else {
+    return { job: state.entities.jobs[ownProps.match.params.id], authId: state.auth._id };
+  }
 }
 
 function mapDispatchToProps(dispatch, ownProps) {

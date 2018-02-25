@@ -1,8 +1,9 @@
 .resume-page-container {
   margin: 0 auto;
-  min-width: 1400px;
-  max-width: 90%;
+  /* min-width: 1400px; */
+  /* max-width: 90%; */
   position: relative;
+  width:100%;
 }
 
 .resumelist-component {
@@ -11,8 +12,10 @@
 
 .resume-container {
   background: #ebebeb;
-  font-size: 100%;
-  width: 700px;
+  /* font-size: 100%;
+  width: 700px; */
+  font-size: 14px;
+  width: 600px;
   max-height: 600px;
   margin: 0 auto;
   margin-top: 10px;
