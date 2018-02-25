@@ -1,13 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchJobs } from '../../actions';
-
+import { withRouter } from 'react-router-dom';
 import {Link} from 'react-router-dom';
 
 class JobList extends React.Component {
+  constructor(props) {
+    super(props);
+    this.redirect = this.redirect.bind(this);
+  }
 
   componentDidMount() {
     this.props.fetchJobs();
+  }
+  
+  redirect(url){
+    this.props.history.push(`http://${url}`);
   }
 
   renderJobs(){
@@ -18,7 +26,7 @@ class JobList extends React.Component {
               <Link className="link-to-job-show-page" to={`/jobs/${job._id}`}>
                 <div className="job-index-item-name">{job.title} - {job.type}</div>
                 <div className="job-index-item-info">
-                  <a target="_blank" href={`http://${job.company_url}`}>{job.company}</a>
+                  <span onClick={() => this.redirect(job.company_url)}>{job.company}</span>
                   &#160;- {job.location}
                 </div>
                 <span className="job-index-item-estimate">Estimated Salary: </span>
@@ -45,8 +53,8 @@ class JobList extends React.Component {
   }
 }
 
-function mapStateToProps(state) {
+function mapStateToProps(state, ownProps) {
   return { jobs: Object.values(state.entities.jobs) };
 }
 
-export default connect(mapStateToProps, { fetchJobs })(JobList);
+export default withRouter(connect(mapStateToProps, { fetchJobs })(JobList));

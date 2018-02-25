@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 // import { ProtectedRoute, AuthRoute } from '../util/route_util.jsx';
@@ -15,6 +15,7 @@ import JobNew from './jobs/JobNew';
 import JobShow from './jobs/JobShow';
 import ResumeList from './resumes/ResumeList';
 import UserProfile from './profile/UserProfile';
+import { AuthRoute, ProtectedRoute } from '../util/route_util.jsx';
 
 class App extends React.Component {
 
@@ -28,12 +29,16 @@ class App extends React.Component {
         <BrowserRouter>
           <div className="inner-container-div">
             <Header />
-            <Route exact path="/" component={Landing}/>
-            <Route exact path="/jobs" component={Dashboard}/>
-            <Route exact path="/jobs/:id" component={JobShow}/>
-            <Route path="/jobs/:id/resumes" component={ResumeList}/>
-            <Route exact path="/jobs/new" component={JobNew}/>
-            <Route exact path="/users/:id" component={UserProfile} />
+            <Switch>
+              <Route path="/api"/>
+              <AuthRoute exact path="/" component={Landing}/>
+              <ProtectedRoute exact path="/jobs" component={Dashboard}/>
+              <ProtectedRoute exact path="/jobs/new" component={JobNew}/>
+              <ProtectedRoute exact path="/jobs/:id" component={JobShow}/>
+              <ProtectedRoute exact path="/users/:id" component={UserProfile} />
+              <ProtectedRoute path="/jobs/:id/resumes" component={ResumeList}/>
+              <Redirect to="/" />
+            </Switch>
           </div>
         </BrowserRouter>
       </div>
