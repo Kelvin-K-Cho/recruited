@@ -1,6 +1,8 @@
 # Recruited
 
-### Recruited is a full-stack single page web application designed to combine the functionality of Tinder with the practicality of Indeed.com.
+[Live](https://recruited.herokuapp.com/)
+
+Recruited is a full-stack single page web application designed to combine the functionality of Tinder with the practicality of Indeed.com.
 
 ## Background and Overview
 
