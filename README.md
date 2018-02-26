@@ -6,6 +6,10 @@
 
 The allocation of highly talented workers and limited employment opportunities is never-ending.  In an attempt to simplify the process, this application is designed to pair recruiters and job seekers given the minimal amount of information.
 
+## Technologies & Technical Challenges
+ **Backend**: Express/Node.js   
+ **Frontend**: React/JavaScript
+
 ## Functionality & MVP
   - [x] User authentication using Node/Express as the backend framework. (1 Day)
   - [x] Ability for job seekers to upload resumes and store onto MongoDB. (1 Day)
@@ -75,9 +79,8 @@ module.exports = (job, resumes) => {
 #### Bonus Features
   - [ ] Websocket chat feature.
 
-## Technologies & Technical Challenges
-##### Backend: Express/Node.js
-##### Frontend: React/JavaScript
+### Known bugs
+* Percentage Match does not show when clicking on approved applicants right after it gets approved.
 
 ## Group Members & Work Breakdown
 
