@@ -273,7 +273,7 @@
   margin-top: 50px;
   background: darkgray;
   border-radius: 10px;
-  box-shadow: 10px 10px grey;
+  box-shadow: 10px 10px grey; /*0 0 10px #979797*/
 }
 
 .create-new-job-header {
