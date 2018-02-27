@@ -3,14 +3,14 @@ import { connect } from 'react-redux';
 import { fetchMyJobs } from '../../actions/index';
 import _ from 'lodash';
 import { Link } from 'react-router-dom';
-import Pacman from '../loader.jsx';
+// import Pacman from '../loader.jsx';
 
 class UserProfile extends React.Component {
 
   // constructor(props){
   //   super(props);
   // }
-  
+
   componentDidMount(){
     this.props.fetchMyJobs(this.props.match.params.id);
   }
