@@ -32,7 +32,7 @@ As a recruiter, user can go to their job listing to check for all resumes other 
 
 In case there is no more pending resume, users can easily click on the approved applicants to review their resumes again.
 
-![](gifs/resume-reviewing.gif)
+![](gifs/resume-reviewing2.gif)
 
 ### User personal page
 Users can always visit their personal profile page to check which jobs they posted, or which jobs they submitted their resumes to.
