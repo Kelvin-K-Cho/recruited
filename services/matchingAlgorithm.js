@@ -55,7 +55,7 @@ module.exports = (job, resumes) => {
     });
     return dupResumes;
   }
-  // that the recruiters are looking for:
+  // check for matched keywords that the recruiters are looking for:
   dupResumes.forEach((resume, idx) => {
     let matchCount = 0;
     thisJobKeywords.forEach((keyword) => {
