@@ -65,8 +65,32 @@
   text-align: center;
 }
 
+.carousel {
+  padding-top: 3%;
+  color: white;
+}
+
+.preview {
+  font-size: 40px;
+}
+
+.preview-item {
+
+}
+
+.preview-header {
+  padding-top: 1%;
+}
+
+.preview-image {
+  padding-top: 1%;
+  margin: 0 auto;
+  width: 20%;
+  height: 10%;
+}
+
 .first-text {
-  padding-top: 16%;
+  padding-top: 4%;
   font-size: 34px;
   /* font-style: italic; */
   /* color: white; */
@@ -106,7 +130,7 @@
 }
 
 .fourth-text {
-  margin-top: 50px;
+  margin-top: 20px;
   color: #000000;
 }
 
