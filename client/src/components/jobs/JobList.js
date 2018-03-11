@@ -13,7 +13,7 @@ class JobList extends React.Component {
   componentDidMount() {
     this.props.fetchJobs();
   }
-  
+
   redirect(url){
     this.props.history.push(`http://${url}`);
   }

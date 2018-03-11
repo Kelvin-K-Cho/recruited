@@ -35,7 +35,7 @@ class Landing extends React.Component {
       slidesToShow: 1,
       slidesToScroll: 1,
       autoplay: true,
-      autoplaySpeed: 3000
+      autoplaySpeed: 5000
     };
 
     return (
@@ -46,28 +46,38 @@ class Landing extends React.Component {
             <Slider {...settings}>
               <div className="preview-item">
                 <h3 className="preview-header">Overall Website</h3>
-                <img className="preview-image"
-                  src="gifs/overall-viewing.gif" alt="overall"/>
+                <a href="gifs/overall-viewing.gif" target="_blank">
+                  <img className="preview-image"
+                    src="gifs/overall-viewing.gif" alt="overall"/>
+                </a>
               </div>
               <div className="preview-item">
                 <h3 className="preview-header">Resume Uploading</h3>
-                <img className="preview-image"
-                  src="gifs/resume-uploading.gif" alt="uploading"/>
+                <a href="gifs/resume-uploading.gif" target="_blank">
+                  <img className="preview-image"
+                    src="gifs/resume-uploading.gif" alt="uploading"/>
+                </a>
               </div>
               <div className="preview-item">
                 <h3 className="preview-header">Resume Approving</h3>
-                <img className="preview-image"
-                  src="gifs/resume-checking.gif" alt="approving"/>
+                <a href="gifs/resume-checking.gif" target="_blank">
+                  <img className="preview-image"
+                    src="gifs/resume-checking.gif" alt="approving"/>
+                </a>
               </div>
               <div className="preview-item">
                 <h3 className="preview-header">Resume Reviewing</h3>
-                <img className="preview-image"
-                  src="gifs/resume-reviewing.gif" alt="reviewing"/>
+                <a href="gifs/resume-reviewing.gif" target="_blank">
+                  <img className="preview-image"
+                    src="gifs/resume-reviewing.gif" alt="reviewing"/>
+                </a>
               </div>
               <div className="preview-item">
                 <h3 className="preview-header">User Page</h3>
-                <img className="preview-image"
-                  src="gifs/user-page.png" alt="user"/>
+                <a href="gifs/user-page.png" target="_blank">
+                  <img className="preview-image"
+                    src="gifs/user-page.png" alt="user"/>
+                </a>
               </div>
             </Slider>
           </div>
