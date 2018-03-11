@@ -8,7 +8,7 @@ Recruited is a full-stack single page web application designed to combine the fu
 
 The allocation of highly talented workers and limited employment opportunities is never-ending.  In an attempt to simplify the process, this application is designed to pair recruiters and job seekers given the minimal amount of information.
 
-## Technologies & Technical Challenges
+## Technologies
  **Backend**: Express/Node.js   
  **Frontend**: React/JavaScript
 
