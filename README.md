@@ -20,6 +20,12 @@ The allocation of highly talented workers and limited employment opportunities i
   - [x] Allow recruiters/seekers to accept or reject resumes based on match criteria. (1 Day)
 
 ## Features
+
+### Overall Website
+Users can login and view all available jobs.
+
+![](gifs/overall-viewing.gif)
+
 ### Resume Uploading
 User can apply for any job by uploading their resumes. The web app will convert Microsoft Word files into text and HTML and save it into the database for matching algorithm.
 
@@ -30,14 +36,16 @@ As a recruiter, user can go to their job listing to check for all resumes other 
 
 ![](gifs/resume-checking.gif)
 
+### Resume Reviewing
+
 In case there is no more pending resume, users can easily click on the approved applicants to review their resumes again.
 
 ![](gifs/resume-reviewing.gif)
 
-### User personal page
+### User Page
 Users can always visit their personal profile page to check which jobs they posted, or which jobs they submitted their resumes to.
 
-![](gifs/screenshot-recruited.herokuapp.com-2018.02.25-21-06-27.png)
+![](gifs/user-page.png)
 
 ## Our Matching Algorithm
 With limited of time, we came up with an algorithm to show percentage match based on our keywords bank. Each job title will have its set of related keywords. Once a job is posted, the algorithm will take a look at its job title and get those keywords from the keywords bank. Then, it looks through the job's description, to see filter keywords which appear in that job's qualifications. From that, it will scan through each resume to check if there is any matched keywords, then calculate the percentage.

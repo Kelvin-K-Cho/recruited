@@ -15,6 +15,7 @@ const cookieSession = require("cookie-session");
 const passport = require("passport");
 const keys = require("./config/keys");
 const bodyParser = require("body-parser");
+const path = require("path");
 require("./models/User");
 require("./models/Jobs");
 require("./models/Resumes");
@@ -26,6 +27,8 @@ mongoose.connect(keys.mongoURI);
 
 //creates a new express server for our browser to access to see the application.
 const app = express();
+
+app.use('/public', express.static(path.join(__dirname + '/public')));
 
 //Applies middleware that ensures our information comes back as json files.
 app.use(bodyParser.json());
