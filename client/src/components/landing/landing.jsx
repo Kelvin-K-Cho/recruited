@@ -1,4 +1,5 @@
 import React from 'react';
+import Slider from 'react-slick';
 import { connect } from "react-redux";
 
 class Landing extends React.Component {
@@ -26,10 +27,50 @@ class Landing extends React.Component {
   }
 
   render() {
-    // console.log(this.state);
+
+    const settings = {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 3000
+    };
+
     return (
       <div className="main-landing-div">
         <div className="session-div-logged-out">
+          <div className="carousel">
+            <h2 className="preview">Preview</h2>
+            <Slider {...settings}>
+              <div className="preview-item">
+                <h3 className="preview-header">Overall Website</h3>
+                <img className="preview-image"
+                  src="gifs/overall-viewing.gif" alt="overall"/>
+              </div>
+              <div className="preview-item">
+                <h3 className="preview-header">Resume Uploading</h3>
+                <img className="preview-image"
+                  src="gifs/resume-uploading.gif" alt="uploading"/>
+              </div>
+              <div className="preview-item">
+                <h3 className="preview-header">Resume Approving</h3>
+                <img className="preview-image"
+                  src="gifs/resume-checking.gif" alt="approving"/>
+              </div>
+              <div className="preview-item">
+                <h3 className="preview-header">Resume Reviewing</h3>
+                <img className="preview-image"
+                  src="gifs/resume-reviewing.gif" alt="reviewing"/>
+              </div>
+              <div className="preview-item">
+                <h3 className="preview-header">User Page</h3>
+                <img className="preview-image"
+                  src="gifs/user-page.png" alt="user"/>
+              </div>
+            </Slider>
+          </div>
           <p className="first-text">
             Start By Doing What Is Necessary,
           </p>
