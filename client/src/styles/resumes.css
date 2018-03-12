@@ -78,7 +78,7 @@
 .approved-resume-container {
   background: white;
   position: absolute;
-  right: 0.5%;
+  right: 4%;
   top: 82px;
   border: 1px solid black;
   padding: 20px 20px 40px 20px;
@@ -122,7 +122,7 @@
 .stats-container {
   background: white;
   position: absolute;
-  left: 0.5%;
+  left: 4%;
   top: 82px;
   border: 1px solid black;
   padding: 20px 20px 40px 20px;
